@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Menu from './Components/Menu';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
-import Contact from './Pages/Contact';
+import HelpForm from './Pages/Contact';
 import AddUser from './Pages/Add/AddUser';
 import AddProgram from './Pages/Add/AddProgram';
 import AddTerm from './Pages/Add/AddTerm';
@@ -28,7 +28,8 @@ function App() {
           {/* Basic Routes */}
           <Route index path='/' element={ <Home /> } />
           <Route path='/login' element={ <Login /> } />
-          <Route path='/contact' element={ <Contact /> } />
+          <Route path='/contact' element={ <HelpForm /> } />
+          
 
           {/* Add Routes */}
           <Route path='/adduser' element={ <AddUser /> } />
