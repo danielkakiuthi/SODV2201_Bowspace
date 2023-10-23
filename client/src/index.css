@@ -1,13 +1,94 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  color: #333;
+}
+h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 8px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ----------------------------------------------------------- MENU -------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.menu {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 60vw;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
 }
+.menu h1 {
+  color: #f1356d;
+}
+.menu .links {
+  margin-left: auto;
+}
+.menu a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.menu a:hover {
+  color: #f1356d;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ----------------------------------------------------------- CONTENT ----------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.content {
+  max-width: 60vw;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ------------------------------------------------------- ADD USER PAGE --------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.add-user {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.add-user label {
+  text-align: left;
+  display: block;
+}
+
+.add-user h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+
+.add-user input, .add-user textarea, .add-user select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.add-user button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+
+
+
