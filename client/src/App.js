@@ -23,35 +23,36 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Menu />
-        <Routes>
 
-          {/* Basic Routes */}
-          <Route index path='/' element={ <Home /> } />
-          <Route path='/login' element={ <Login /> } />
-          <Route path='/contact' element={ <HelpForm /> } />
-          
+        <div className="content">
+          <Routes>
+            {/* Basic Routes */}
+            <Route index path='/' element={ <Home /> } />
+            <Route path='/login' element={ <Login /> } />
+            <Route path='/contact' element={ <HelpForm /> } />
+            
 
-          {/* Add Routes */}
-          <Route path='/adduser' element={ <AddUser /> } />
-          <Route path='/addprogram' element={ <AddProgram /> } />
-          <Route path='/addterm' element={ <AddTerm /> } />
-          <Route path='/addcourse' element={ <AddCourse /> } />
-          
-          {/* Edit Routes */}
-          <Route path='/edituser' element={ <EditUser /> } />
-          <Route path='/editprogram' element={ <EditProgram /> } />
-          <Route path='/editterm' element={ <EditTerm /> } />
-          <Route path='/editcourse' element={ <EditCourse /> } />
-          
-          {/* Custom Routes */}
-          <Route path='/registerstudentforterm' element={ <RegisterStudentForTerm /> } />
-          <Route path='/registerstudentforcourses' element={ <RegisterStudentForCourses /> } />
-          <Route path='/viewmycourses' element={ <ViewMyCourses /> } />
-          
-          {/* Default Route */}
-          <Route path='/*' element={ <Error /> } />
-
-        </Routes>
+            {/* Add Routes */}
+            <Route path='/adduser' element={ <AddUser /> } />
+            <Route path='/addprogram' element={ <AddProgram /> } />
+            <Route path='/addterm' element={ <AddTerm /> } />
+            <Route path='/addcourse' element={ <AddCourse /> } />
+            
+            {/* Edit Routes */}
+            <Route path='/edituser' element={ <EditUser /> } />
+            <Route path='/editprogram' element={ <EditProgram /> } />
+            <Route path='/editterm' element={ <EditTerm /> } />
+            <Route path='/editcourse' element={ <EditCourse /> } />
+            
+            {/* Custom Routes */}
+            <Route path='/registerstudentforterm' element={ <RegisterStudentForTerm /> } />
+            <Route path='/registerstudentforcourses' element={ <RegisterStudentForCourses /> } />
+            <Route path='/viewmycourses' element={ <ViewMyCourses /> } />
+            
+            {/* Default Route */}
+            <Route path='/*' element={ <Error /> } />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
