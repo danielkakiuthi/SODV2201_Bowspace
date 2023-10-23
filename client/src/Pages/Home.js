@@ -10,11 +10,9 @@ const Home = () => {
   return (
     <div className="home">
       <h2>Home Page</h2>
-      <div>
-        { error && <div>{ error }</div> }
-        { isPending && <div>Loading...</div> }
-        { users && <UsersList users={users} /> }
-      </div>
+      { error && <div>{ error }</div> }
+      { isPending && <div>Loading...</div> }
+      { users && <UsersList users={users} /> }
     </div>
   );
 }
