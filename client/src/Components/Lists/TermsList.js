@@ -10,7 +10,7 @@ const TermsList = ({ terms }) => {
       {terms.map((term) => (
         <div className="preview" key={term.id}>
           <Link to={`/terms/${term.id}`}>
-            <h2>[Term: {term.id}] {term.nameTerm}</h2>
+            <h2>[id Term: {term.id}] {term.nameTerm}</h2>
             <p>(From {term.startTerm} Until {term.endTerm})</p>
           </Link>
         </div>

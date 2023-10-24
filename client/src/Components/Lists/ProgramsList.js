@@ -10,7 +10,7 @@ const ProgramsList = ({ programs }) => {
       {programs.map((program) => (
         <div className="preview" key={program.id}>
           <Link to={`/programs/${program.id}`}>
-            <h2>[Program: {program.id}] {program.nameProgram}</h2>
+            <h2>[id Program: {program.id}] {program.nameProgram}</h2>
             <p>{program.aboutProgram}</p>
           </Link>
         </div>
