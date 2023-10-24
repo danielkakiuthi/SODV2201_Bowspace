@@ -29,7 +29,7 @@ const AddTerm = () => {
 
   return (
     <div className="add-term">
-      <h2>Add Term Page</h2>
+      <h1>Add Term Page</h1>
 
       <form onSubmit={handleSubmit}>
         <label>Name:</label>

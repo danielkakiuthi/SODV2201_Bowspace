@@ -6,11 +6,12 @@ const UsersList = ({ users }) => {
 
   return (
     <div className="users-list">
-      <h2>Users List:</h2>
+      <h1>Users List:</h1>
       {users.map((user) => (
-        <div className="user-preview" key={user.id}>
+        <div className="preview" key={user.id}>
           <Link to={`/users/${user.id}`}>
-            <p>id User: {user.id} | emailUser: {user.emailUser} | nameUser: {user.nameUser}</p>
+            <h2>[id User: {user.id}] {user.nameUser}</h2>
+            <p>emailUser: {user.emailUser}</p>
           </Link>
         </div>
       ))}

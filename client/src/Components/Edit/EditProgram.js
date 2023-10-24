@@ -5,6 +5,8 @@ const EditProgram = ({ program }) => {
   const [isPending, setIsPending] = useState(false);
   const [name, setName] = useState(program.nameProgram);
   const [length, setLength] = useState(program.lengthProgram);
+  const [about, setAbout] = useState(program.aboutProgram);
+  const [description, setDescription] = useState(program.descriptionProgram);
   const url = `http://localhost:8000/listPrograms/${ program.id }`;
 
   const handleSubmit = (e) => {
@@ -12,7 +14,9 @@ const EditProgram = ({ program }) => {
     setIsPending(true);
     const data = {
       nameProgram: name,
-      lengthProgram: length
+      lengthProgram: length,
+      aboutProgram: about,
+      descriptionProgram: description
     };
     fetch(url, {
       method: 'PUT',
@@ -42,6 +46,22 @@ const EditProgram = ({ program }) => {
           required
           value={length}
           onChange={(e) => setLength(e.target.value)}
+        />
+        <label>About:</label>
+        <textarea
+          type="text"
+          required
+          value={about}
+          onChange={(e) => setAbout(e.target.value)}
+          rows="10"
+        />
+        <label>Description:</label>
+        <textarea
+          type="text"
+          required
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          rows="10"
         />
         { !isPending && <button>Update Program</button> }
         { isPending && <button disabled>Loading Program...</button> }

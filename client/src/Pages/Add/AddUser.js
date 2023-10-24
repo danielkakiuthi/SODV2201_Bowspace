@@ -31,7 +31,7 @@ const AddUser = () => {
 
   return (
     <div className="add-user">
-      <h2>Add User Page (SignUp)</h2>
+      <h1>Add User Page (SignUp)</h1>
 
       <form onSubmit={handleSubmit}>
         <label>Email:</label>

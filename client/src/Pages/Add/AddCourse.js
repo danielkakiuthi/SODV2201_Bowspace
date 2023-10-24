@@ -10,7 +10,7 @@ const AddCourse = () => {
   const [credit, setCredit] = useState("");
   const [fee, setFee] = useState("");
   const [description, setDescription] = useState("");
-
+  const url = `http://localhost:8000/listCourses`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const AddCourse = () => {
       feeCourse: fee,
       descriptionCourse: description
     };
-    fetch('http://localhost:8000/listCourses', {
+    fetch(url, {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
@@ -37,7 +37,7 @@ const AddCourse = () => {
 
   return (
     <div className="add-course">
-      <h2>Add Course Page</h2>
+      <h1>Add Course Page</h1>
 
       <form onSubmit={handleSubmit}>
         <label>ID Term:</label>
@@ -83,11 +83,12 @@ const AddCourse = () => {
           onChange={(e) => setFee(e.target.value)}
         />
         <label>Description:</label>
-        <input
+        <textarea
           type="text"
           required
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          rows="10"
         />
         
         { !isPending && <button>Add Course</button> }

@@ -6,11 +6,12 @@ const CoursesList = ({ courses }) => {
 
   return (
     <div className="courses-list">
-      <h2>Courses List:</h2>
+      <h1>Courses List:</h1>
       {courses.map((course) => (
-        <div className="course-preview" key={course.id}>
+        <div className="preview" key={course.id}>
           <Link to={`/courses/${course.id}`}>
-            <p>id Course: {course.id} | codeCourse: {course.codeCourse} | nameCourse: {course.nameCourse}</p>
+            <h2>[id Course: {course.id}] {course.codeCourse} - {course.nameCourse}</h2>
+            <p>{course.descriptionCourse}</p>
           </Link>
         </div>
       ))}

@@ -6,11 +6,12 @@ const TermsList = ({ terms }) => {
 
   return (
     <div className="terms-list">
-      <h2>Terms List:</h2>
+      <h1>Terms List:</h1>
       {terms.map((term) => (
-        <div className="term-preview" key={term.id}>
+        <div className="preview" key={term.id}>
           <Link to={`/terms/${term.id}`}>
-            <p>id Term: {term.id} | nameTerm: {term.nameTerm} | startTerm: {term.startTerm} | endTerm: {term.endTerm}</p>
+            <h2>[Term: {term.id}] {term.nameTerm}</h2>
+            <p>(From {term.startTerm} Until {term.endTerm})</p>
           </Link>
         </div>
       ))}

@@ -6,11 +6,12 @@ const ProgramsList = ({ programs }) => {
 
   return (
     <div className="programs-list">
-      <h2>Programs List:</h2>
+      <h1>Programs List:</h1>
       {programs.map((program) => (
-        <div className="program-preview" key={program.id}>
+        <div className="preview" key={program.id}>
           <Link to={`/programs/${program.id}`}>
-            <p>id Program: {program.id} | nameProgram: {program.nameProgram}</p>
+            <h2>[Program: {program.id}] {program.nameProgram}</h2>
+            <p>{program.aboutProgram}</p>
           </Link>
         </div>
       ))}

@@ -38,7 +38,7 @@ const EditCourse = ({ course }) => {
 
   return (
     <div className="edit-course">
-      <h2>Edit Course Page</h2>
+      <h1>Edit Course Page</h1>
       <form onSubmit={handleSubmit}>
         <h3>Course Id: {course.id}</h3>
         <label>id Term:</label>
@@ -84,11 +84,12 @@ const EditCourse = ({ course }) => {
           onChange={(e) => setFee(e.target.value)}
         />
         <label>Description:</label>
-        <input
+        <textarea
           type="text"
           required
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          rows="10"
         />
         { !isPending && <button>Update Course</button> }
         { isPending && <button disabled>Loading Course...</button> }
