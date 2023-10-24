@@ -1,8 +1,8 @@
-import useFetch from '../Hooks/useFetch';
-import UsersList from '../Components/Lists/UsersList';
-import ProgramsList from '../Components/Lists/ProgramsList';
-import TermsList from '../Components/Lists/TermsList';
-import CoursesList from '../Components/Lists/CoursesList';
+import useFetch from '../../Hooks/useFetch';
+import UsersList from '../../Components/Lists/UsersList';
+import ProgramsList from '../../Components/Lists/ProgramsList';
+import TermsList from '../../Components/Lists/TermsList';
+import CoursesList from '../../Components/Lists/CoursesList';
 
 
 const Home = () => {

@@ -1,9 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Menu from './Components/Menu';
-import Home from './Pages/Home';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Home from './Pages/Navbar/Home';
+import About from './Pages/Navbar/About';
+import ProgramsInformation from './Pages/Navbar/ProgramsInformation';
 import Login from './Pages/Login';
-import HelpForm from './Pages/Contact';
+import Logout from './Pages/Logout';
+import Contact from './Pages/Navbar/Contact';
 import AddUser from './Pages/Add/AddUser';
 import AddProgram from './Pages/Add/AddProgram';
 import AddTerm from './Pages/Add/AddTerm';
@@ -22,37 +26,45 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Menu />
+        <Header />
 
         <div className="content">
           <Routes>
-            {/* Basic Routes */}
+            {/* Navbar Routes */}
             <Route index path='/' element={ <Home /> } />
-            <Route path='/login' element={ <Login /> } />
-            <Route path='/contact' element={ <HelpForm /> } />
+            <Route path='/about' element={ <About /> } />
+            <Route path='/programsInformation' element={ <ProgramsInformation /> } />
+            <Route path='/contact' element={ <Contact /> } />
+
             
+            {/* MenuUser Routes */}
+            <Route path='/signUp' element={ <AddUser /> } />
+            <Route path='/login' element={ <Login /> } />
+            <Route path='/logout' element={ <Logout /> } />
 
             {/* Add Routes */}
-            <Route path='/adduser' element={ <AddUser /> } />
-            <Route path='/addprogram' element={ <AddProgram /> } />
-            <Route path='/addterm' element={ <AddTerm /> } />
-            <Route path='/addcourse' element={ <AddCourse /> } />
+            <Route path='/addUser' element={ <AddUser /> } />
+            <Route path='/addProgram' element={ <AddProgram /> } />
+            <Route path='/addTerm' element={ <AddTerm /> } />
+            <Route path='/addCourse' element={ <AddCourse /> } />
             
-            {/* Edit Routes */}
+            {/* Details Routes */}
             <Route path='/users/:id' element={ <UserDetails /> } />
             <Route path='/programs/:id' element={ <ProgramDetails /> } />
             <Route path='/terms/:id' element={ <TermDetails /> } />
             <Route path='/courses/:id' element={ <CourseDetails /> } />
             
             {/* Custom Routes */}
-            <Route path='/registerstudentforterm' element={ <RegisterStudentForTerm /> } />
-            <Route path='/registerstudentforcourses' element={ <RegisterStudentForCourses /> } />
-            <Route path='/viewmycourses' element={ <ViewMyCourses /> } />
+            <Route path='/registerStudentForTerm' element={ <RegisterStudentForTerm /> } />
+            <Route path='/registerStudentForCourses' element={ <RegisterStudentForCourses /> } />
+            <Route path='/viewMyCourses' element={ <ViewMyCourses /> } />
             
             {/* Default Route */}
             <Route path='/*' element={ <Error /> } />
           </Routes>
         </div>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );
