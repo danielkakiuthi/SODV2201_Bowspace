@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-const AddProgram = () => {
+const EditProgram = ({ program }) => {
 
   const [isPending, setIsPending] = useState(false);
-  const [name, setName] = useState("");
-  const [length, setLength] = useState("");
-
+  const [name, setName] = useState(program.nameProgram);
+  const [length, setLength] = useState(program.lengthProgram);
+  const url = `http://localhost:8000/listPrograms/${ program.id }`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,22 +14,21 @@ const AddProgram = () => {
       nameProgram: name,
       lengthProgram: length
     };
-    fetch('http://localhost:8000/listPrograms', {
-      method: 'POST',
+    fetch(url, {
+      method: 'PUT',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
-      console.log('New Program Added!');
+      console.log('Program Updated!');
       setIsPending(false);
     })
   }
 
-  
   return (
-    <div className="add-program">
-      <h2>Add Program Page</h2>
-
+    <div className="edit-program">
+      <h2>Edit Program Page</h2>
       <form onSubmit={handleSubmit}>
+        <h3>Program Id: {program.id}</h3>
         <label>Name:</label>
         <input
           type="text"
@@ -44,12 +43,11 @@ const AddProgram = () => {
           value={length}
           onChange={(e) => setLength(e.target.value)}
         />
-        { !isPending && <button>Add Program</button> }
+        { !isPending && <button>Update Program</button> }
         { isPending && <button disabled>Loading Program...</button> }
       </form>
-
     </div>
   );
 }
  
-export default AddProgram;
+export default EditProgram;

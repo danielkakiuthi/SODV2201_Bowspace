@@ -1,15 +1,16 @@
 import { useState } from 'react';
 
-const AddCourse = () => {
+const EditCourse = ({ course }) => {
 
   const [isPending, setIsPending] = useState(false);
-  const [idTerm, setIdTerm] = useState("");
-  const [idProgram, setIdProgram] = useState("");
-  const [code, setCode] = useState("");
-  const [name, setName] = useState("");
-  const [credit, setCredit] = useState("");
-  const [fee, setFee] = useState("");
-  const [description, setDescription] = useState("");
+  const [idTerm, setIdTerm] = useState(course.idTerm);
+  const [idProgram, setIdProgram] = useState(course.idProgram);
+  const [code, setCode] = useState(course.codeCourse);
+  const [name, setName] = useState(course.nameCourse);
+  const [credit, setCredit] = useState(course.creditCourse);
+  const [fee, setFee] = useState(course.feeCourse);
+  const [description, setDescription] = useState(course.descriptionCourse);
+  const url = `http://localhost:8000/listCourses/${ course.id }`;
 
 
   const handleSubmit = (e) => {
@@ -24,30 +25,30 @@ const AddCourse = () => {
       feeCourse: fee,
       descriptionCourse: description
     };
-    fetch('http://localhost:8000/listCourses', {
-      method: 'POST',
+    fetch(url, {
+      method: 'PUT',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
-      console.log('New Course Added!');
+      console.log('Course Updated!');
       setIsPending(false);
     })
   }
 
 
   return (
-    <div className="add-course">
-      <h2>Add Course Page</h2>
-
+    <div className="edit-course">
+      <h2>Edit Course Page</h2>
       <form onSubmit={handleSubmit}>
-        <label>ID Term:</label>
+        <h3>Course Id: {course.id}</h3>
+        <label>id Term:</label>
         <input
           type="text"
           required
           value={idTerm}
           onChange={(e) => setIdTerm(e.target.value)}
         />
-        <label>ID Program:</label>
+        <label>id Program:</label>
         <input
           type="text"
           required
@@ -89,13 +90,11 @@ const AddCourse = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        
-        { !isPending && <button>Add Course</button> }
+        { !isPending && <button>Update Course</button> }
         { isPending && <button disabled>Loading Course...</button> }
       </form>
-
     </div>
   );
 }
  
-export default AddCourse;
+export default EditCourse;

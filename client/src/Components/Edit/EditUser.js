@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-const AddUser = () => {
+const EditUser = ({ user }) => {
 
   const [isPending, setIsPending] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [email, setEmail] = useState(user.emailUser);
+  const [password, setPassword] = useState(user.passwordUser);
+  const [name, setName] = useState(user.nameUser);
+  const [isAdmin, setIsAdmin] = useState(user.isAdmin);
+  const url = `http://localhost:8000/listUsers/${ user.id }`;
 
 
   const handleSubmit = (e) => {
@@ -18,22 +19,22 @@ const AddUser = () => {
       nameUser: name,
       isAdmin: isAdmin
     };
-    fetch('http://localhost:8000/listUsers', {
-      method: 'POST',
+    fetch(url, {
+      method: 'PUT',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
-      console.log('New User Added!');
+      console.log('User Updated!');
       setIsPending(false);
     })
   }
 
-
+  
   return (
-    <div className="add-user">
-      <h2>Add User Page (SignUp)</h2>
-
+    <div className="edit-user">
+      <h2>Edit User Page</h2>
       <form onSubmit={handleSubmit}>
+        <h3>User Id: {user.id}</h3>
         <label>Email:</label>
         <input
           type="text"
@@ -55,18 +56,18 @@ const AddUser = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <label>Is Admin:</label>
         <input
-          type="hidden"
+          type="text"
           required
           value={isAdmin}
           onChange={(e) => setIsAdmin(e.target.value)}
         />
-        { !isPending && <button>Add User</button> }
+        { !isPending && <button>Update User</button> }
         { isPending && <button disabled>Loading User...</button> }
       </form>
-      
     </div>
   );
 }
  
-export default AddUser;
+export default EditUser;

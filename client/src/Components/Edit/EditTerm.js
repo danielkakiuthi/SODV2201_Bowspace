@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
-const AddTerm = () => {
+const EditTerm = ({ term }) => {
 
   const [isPending, setIsPending] = useState(false);
-  const [name, setName] = useState("");
-  const [start, setStart] = useState("");
-  const [end, setEnd] = useState("");
+  const [name, setName] = useState(term.nameTerm);
+  const [start, setStart] = useState(term.startTerm);
+  const [end, setEnd] = useState(term.endTerm);
+  const url = `http://localhost:8000/listTerms/${ term.id }`;
 
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsPending(true);
@@ -16,22 +17,22 @@ const AddTerm = () => {
       startTerm: start,
       endTerm: end
     };
-    fetch('http://localhost:8000/listTerms', {
-      method: 'POST',
+    fetch(url, {
+      method: 'PUT',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
-      console.log('New Term Added!');
+      console.log('Term Updated!');
       setIsPending(false);
     })
   }
 
 
   return (
-    <div className="add-term">
-      <h2>Add Term Page</h2>
-
+    <div className="edit-term">
+      <h2>Edit Term Page</h2>
       <form onSubmit={handleSubmit}>
+        <h3>Term Id: {term.id}</h3>
         <label>Name:</label>
         <input
           type="text"
@@ -53,12 +54,11 @@ const AddTerm = () => {
           value={end}
           onChange={(e) => setEnd(e.target.value)}
         />
-        { !isPending && <button>Add Term</button> }
+        { !isPending && <button>Update Term</button> }
         { isPending && <button disabled>Loading Term...</button> }
       </form>
-
     </div>
   );
 }
  
-export default AddTerm;
+export default EditTerm;

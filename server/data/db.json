@@ -1,5 +1,5 @@
 {
-  "listUser": [
+  "listUsers": [
     { "id":0, "emailUser": "d.kakiuthi331@mybvc.ca", "passwordUser": "123", "nameUser": "Daniel Kakiuthi", "isAdmin": true },
     { "id":1, "emailUser": "r.magalhaesdaconc227@mybvc.ca", "passwordUser": "123", "nameUser": "Rafael Magalhães Da Conceição", "isAdmin": false },
     { "id":2, "emailUser": "d.salles988@mybvc.ca", "passwordUser": "123", "nameUser": "Debora Salles Antunes", "isAdmin": false }
