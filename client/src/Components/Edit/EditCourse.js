@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const EditCourse = ({ course }) => {
 
@@ -11,9 +12,10 @@ const EditCourse = ({ course }) => {
   const [fee, setFee] = useState(course.feeCourse);
   const [description, setDescription] = useState(course.descriptionCourse);
   const url = `http://localhost:8000/listCourses/${ course.id }`;
+  const navigate = useNavigate();
 
 
-  const handleSubmit = (e) => {
+  const handleUpdate = (e) => {
     e.preventDefault();
     setIsPending(true);
     const data = {
@@ -36,10 +38,19 @@ const EditCourse = ({ course }) => {
   }
 
 
+  const handleDelete = () => {
+    fetch(url, {
+      method: 'DELETE'
+    }).then(() => {
+      navigate("/");
+    })
+  }
+
+
   return (
     <div className="edit-course">
       <h1>Edit Course Page</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleUpdate}>
         <h3>Course Id: {course.id}</h3>
         <label>id Term:</label>
         <input
@@ -93,6 +104,7 @@ const EditCourse = ({ course }) => {
         />
         { !isPending && <button>Update Course</button> }
         { isPending && <button disabled>Loading Course...</button> }
+        <button onClick={handleDelete} className='delete-button'>Delete Course</button>
       </form>
     </div>
   );
