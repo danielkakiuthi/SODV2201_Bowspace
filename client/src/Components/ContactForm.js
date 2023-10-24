@@ -31,11 +31,11 @@ const ContactForm = ({ onSubmit }) => {
         required
         onChange={(e) => setProgramName(e.target.value)}
       />
-      <input
-        type="text"
+      <textarea
         placeholder="What do you need help with ?"
         required
         onChange={(e) => setMessage(e.target.value)}
+        rows={10} // Isso define inicialmente 4 linhas visíveis
       />
       <button type="submit">Send</button>
     </form>

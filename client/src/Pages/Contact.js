@@ -7,7 +7,7 @@ const HelpForm = () => {
 
   return (
     <div>
-      <h1>Help From Admin</h1>
+      <h1 className="h1ContactForm">Help From Admin</h1>
       <ContactForm onSubmit={onSubmit} />
     </div>
   );
