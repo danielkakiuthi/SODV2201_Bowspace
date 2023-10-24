@@ -36,14 +36,14 @@ const AddUser = () => {
       <form onSubmit={handleSubmit}>
         <label>Email:</label>
         <input
-          type="text"
+          type="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <label>Password:</label>
         <input
-          type="text"
+          type="password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -64,6 +64,7 @@ const AddUser = () => {
         { !isPending && <button>Add User</button> }
         { isPending && <button disabled>Loading User...</button> }
       </form>
+      <a href="/login">Login</a>
       
     </div>
   );

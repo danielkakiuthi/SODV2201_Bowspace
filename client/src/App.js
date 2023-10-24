@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import useToken from './Hooks/useToken'
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './Pages/Navbar/Home';
@@ -21,7 +22,25 @@ import RegisterStudentForCourses from './Pages/RegisterStudentForCourses';
 import ViewMyCourses from './Pages/ViewMyCourses';
 import Error from './Pages/Error';
 
+
 function App() {
+
+  const { token, setToken } = useToken();
+
+
+  if(!token) {
+    return (
+      <>
+        <BrowserRouter>
+          <Routes>
+            <Route index path='/' element={ <Login setToken={setToken} /> } />
+            <Route path='/login' element={ <Login setToken={setToken} /> } />
+            <Route path='/signUp' element={ <AddUser /> } />
+          </Routes>
+        </BrowserRouter>
+      </>
+    ) 
+  }
 
   return (
     <div className="App">
@@ -39,7 +58,7 @@ function App() {
             
             {/* MenuUser Routes */}
             <Route path='/signUp' element={ <AddUser /> } />
-            <Route path='/login' element={ <Login /> } />
+            <Route path='/login' element={ <Login setToken={setToken} /> } />
             <Route path='/logout' element={ <Logout /> } />
 
             {/* Add Routes */}

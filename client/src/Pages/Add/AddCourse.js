@@ -46,6 +46,7 @@ const AddCourse = () => {
           required
           value={idTerm}
           onChange={(e) => setIdTerm(e.target.value)}
+          placeholder='1'
         />
         <label>ID Program:</label>
         <input
@@ -53,6 +54,7 @@ const AddCourse = () => {
           required
           value={idProgram}
           onChange={(e) => setIdProgram(e.target.value)}
+          placeholder='1'
         />
         <label>Code:</label>
         <input
@@ -60,6 +62,7 @@ const AddCourse = () => {
           required
           value={code}
           onChange={(e) => setCode(e.target.value)}
+          placeholder='SODV2201'
         />
         <label>Name:</label>
         <input
@@ -67,6 +70,7 @@ const AddCourse = () => {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
+          placeholder='Web Programming'
         />
         <label>Credits:</label>
         <input
@@ -74,6 +78,7 @@ const AddCourse = () => {
           required
           value={credit}
           onChange={(e) => setCredit(e.target.value)}
+          placeholder='3'
         />
         <label>Fee:</label>
         <input
@@ -81,6 +86,7 @@ const AddCourse = () => {
           required
           value={fee}
           onChange={(e) => setFee(e.target.value)}
+          placeholder='1900.00'
         />
         <label>Description:</label>
         <textarea
@@ -89,6 +95,7 @@ const AddCourse = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows="10"
+          placeholder='This course gives learners the opportunity to enhance and enrich their skills in web programming. Learners develop web applications using three-tier architecture, session management, object-oriented techniques and advanced database interactions. In addition, the course explores concepts such as advanced cascading style sheet (CSS). Learners develop rich interactive web applications with authentication and security.'
         />
         
         { !isPending && <button>Add Course</button> }
