@@ -1,173 +1,11 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-/* base styles */
-* {
-  margin: 0;
-  font-family: "Quicksand";
-  color: #333;
-}
-h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: px;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------------
-   ----------------------------------------------------------- HEADER -----------------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-.header {
-  padding: 0;
-  display: relative;
-  align-items: center;
-  max-width: 70vw;
-  height: 28vh;
-  margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
-  background-color:darkblue;
-}
-
-.header h1 {
-  display: inline;
-  color: #f2f2f2;
-  font-size:5em;
-  position: absolute;
-  top: 8%;
-  padding-left: 25px;
-}
-
-.header a {
-  color: white;
-  display: inline;
-  position: relative;
-  padding-left: 8%;
-  margin: 0 40px;
-}
-
-.header .menu-user {
-  background-color: gray;
-  width: 20%;
-  display: inline;
-  position: absolute;
-  top: 0px;
-  right: 15vw;
-}
-
-.header .navbar {
-  background-color: darkred;
-  width: 100%;
-  display: inline-block;
-  position: relative;
-}
-
-.header-image {
-  width: 10vw;
-  text-align: left;
-  display: inline;
-  position: relative;
-  padding-top: 2vw;
-  padding-left: 2vw;
-}
-
-.links {
-  height: 30px;
-  font-size: large;
-}
-
-/* ------------------------------------------------------------------------------------------------------------------------------------
-   ----------------------------------------------------------- FOOTER -----------------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-.footer {
-  padding: 0;
-  display: relative;
-  align-items: center;
-  max-width: 70vw;
-  height: 2vh;
-  margin: 0 auto;
-  bottom: 0;
-  text-align: center;
-
-}
-
-
-
-/* ------------------------------------------------------------------------------------------------------------------------------------
-   ----------------------------------------------------------- CONTENT ----------------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-.content {
-  max-width: 60vw;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-
-/* ------------------------------------------------------------------------------------------------------------------------------------
-   ------------------------------------------------------- ADD USER PAGE --------------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-.add-user {
-  max-width: 400px;
-  margin: auto;
-  text-align: center;
-}
-
-.add-user label {
-  text-align: left;
-  display: block;
-}
-
-.add-user h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 30px;
-}
-
-.add-user input, .add-user textarea, .add-user select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
-
-.add-user button {
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-
-/* ------------------------------------------------------------------------------------------------------------------------------------
-   ------------------------------------------------ PREVIEW COMPONENTS ----------------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-.preview {
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
-}
-
-.preview:hover {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.preview h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 8px;
-}
-
-.preview a {
-  text-decoration: none;
-}
-
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
    ------------------------------------------------ VIEW MY COURSES PAGE --------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
 
-
+/* Styles for the View My Courses Page */
 .vmcbody {
   max-width: 900px;
   margin-left: auto;
@@ -178,111 +16,374 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for unordered lists */
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Styles for list items */
 ul li {
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-
+/* Styles for tables */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
+/* Styles for table headers */
 thead {
   background-color: #4285f4;
   color: #fff;
 }
 
+/* Styles for table header cells */
 th {
   font-size: 18px;
   padding: 16px;
   text-align: center;
 }
 
+/* Styles for even table rows */
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
+/* Styles for table data cells */
 td {
   padding: 10px;
   text-align: center;
   font-size: 14px;
 }
 
-
 /* ------------------------------------------------------------------------------------------------------------------------------------
    ------------------------------------------------ CONTACT PAGE --------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
 
-   .contact{
-    text-align: center;
-    font-size: 34px;
-   }
-   
-   form {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  input, textarea {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
+/* Styles for the Contact Page */
+.contact {
+  text-align: center;
+  font-size: 34px;
+}
 
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4285f4;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #3579d8; 
-  }
-  
-  button:active {
-    background-color: #2a66c7;
-  }
-  
+/* Styles for form elements */
+form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for input and textarea fields */
+input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Styles for buttons */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #3579d8;
+}
+
+/* Active state for buttons */
+button:active {
+  background-color: #2a66c7;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+/* Styles for h2 elements */
+h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------------------------
-   ------------------------------------------------ DELETE BUTTONS --------------------------------------------------------------------
+   ------------------------------------------------ HEADER --------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
+.header {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: darkblue;
+}
+
+.header h1{
+  font-size: 60px;
+}
+
+.bowspace {
+  display: inline;
+  color: #f2f2f2;
+  font-size: 2em;
+  position: absolute;
+  top: 3%;
+  left: 12%;
+  padding-left: 25px;
+  width: 50%;
+}
+
+.header .navbar {
+  color: white;
+  display: inline;
+  position: relative;
+  padding-left: 8%;
+  margin: 0 20px;
+  text-decoration: none;
+  background-color: darkred;
+  margin-top: 5%;
+  width: 65%;
+}
+
+.header .menu-user{
+  width: 20%;
+  display: flex; /* Adicionado flex para alinhar os links lado a lado */
+  position: absolute;
+  top: 0px;
+  right: 5vw;
+  color: white;
+}
+
+.header .menu-user a{
+  margin: 10px;
+  padding-right: 50px;
+  color: white;
+}
+
+/* Hover effect for menu user */
+.header .menu-user a:hover{
+  color: darkred;
+}
+
+.navbar {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  background-color: #333; /* Cor de fundo da barra de navegação */
+  color: #fff; /* Cor do texto */
+  width: 100%; /* A largura ocupará 100% da largura da janela do navegador */
+}
+
+.navbarlinks {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.navbarlinks a {
+  text-decoration: none; /* Remova a decoração do link (sublinhado) */
+  color: #fff; /* Cor do texto dos links */
+  margin: 0 10px; /* Espaçamento horizontal entre os links */
+}
+
+
+.header .navbar a{
+  margin: 10px;
+  padding-right: 55px;
+  color: white;
+}
+
+.header .navbar a:hover{
+  color: darkblue;
+}
+
+.header-image {
+  width: 10%;
+  text-align: left;
+  display: inline;
+  position: relative;
+  padding-top: 2vw;
+  padding-left: 2vw;
+}
+
+.links {
+  height: auto;
+  font-size: large;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ------------------------------------------------ FOOTER --------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.footer {
+  margin-top: 90px;
+}
+
+/* Styles for footer links */
+.footerlinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+/* Hover effect for footer links */
+.footerlinks a:hover {
+  text-decoration: none;
+  color: darkblue;
+}
+
+/* Styles for footer paragraphs */
+.pfooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ------------------------------------------------ CONTENT --------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.content {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+/* Remove underlines from links */
+a {
+  text-decoration: none;
+}
+
+/* Hover effect for links */
+a:hover {
+  color: #3579d8;
+}
+
+/* Add User Page */
+.add-user {
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Styles for labels in the Add User page */
+.add-user label {
+  text-align: left;
+  display: block;
+}
+
+/* Styles for h2 elements in the Add User page */
+.add-user h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 20px;
+}
+
+/* Styles for input, textarea, and select elements in the Add User page */
+.add-user input, .add-user textarea, .add-user select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Styles for buttons in the Add User page */
+.add-user button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Preview Components */
+.preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+
+/* Hover effect for preview components */
+.preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for h2 elements in preview components */
+.preview h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 12px;
+}
+
+/* Remove underlines from links in preview components */
+.preview a {
+  text-decoration: none;
+}
+
+
+
+/* Delete Buttons */
 .delete-button {
   background-color: red;
 }
 
+/* Hover effect for delete buttons */
 .delete-button:hover {
   background-color: darkred;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ------------------------------------------------ LOGIN PAGE --------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
-   ---------------------------------------------------- LOGIN -------------------------------------------------------------------------
+   ----------------------------------------- Media Queries for Responsive Design --------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
-   .login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 768px) {
+  /* Define styles for screens with a maximum width of 768px here */
+  .header .navbar {
+    width: 100%;
   }
+
+  .header .navbarlinks {
+    width: 100%;
+  }
+
+  .header .menu-user {
+    display: none; /* Hide the menu on smaller screens */
+  }
+}

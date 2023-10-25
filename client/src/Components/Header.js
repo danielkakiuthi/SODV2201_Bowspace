@@ -8,7 +8,7 @@ const Header = () => {
     <div className="header">
       <MenuUser />
       <img src={logo} alt="Logo" className='header-image' />;
-      <h1>Bowspace</h1>
+      <h1 className='bowspace'>Bowspace</h1>
       <Navbar />
 
     </div>
