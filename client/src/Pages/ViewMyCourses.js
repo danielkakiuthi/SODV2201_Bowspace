@@ -1,118 +1,68 @@
-import React from 'react';
+import useFetch from '../Hooks/useFetch';
 
-class ViewMyCourses extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      courses: [
-        {
-          code: 'DATA2201',
-          name: 'Relational Databases',
-          startDate: "2023 Set 01",
-          endDate: "2023 Dec 31",
-          dropDate: "2023 Set 15",
-          withdrawalDate: "2023 Set 05",
-          credits: 3,
-          campus: "South",
-          deliveryMode: "In Class"
-        },
-        {
-          code: 'MGMT1104',
-          name: 'IT Project Management',
-          startDate: "2023 Set 01",
-          endDate: "2023 Dec 31",
-          dropDate: "2023 Set 15",
-          withdrawalDate: "2023 Set 05",
-          credits: 3,
-          campus: "North",
-          deliveryMode: "In Class"
-        },
-        {
-          code: 'SODV2101',
-          name: 'Rapid Application',
-          startDate: "2023 Set 01",
-          endDate: "2023 Dec 31",
-          dropDate: "2023 Set 15",
-          withdrawalDate: "2023 Set 05",
-          credits: 3,
-          campus: "South",
-          deliveryMode: "Real-time Online"
-        },
-        {
-          code: 'SODV2201',
-          name: 'Web Application',
-          startDate: "2023 Set 01",
-          endDate: "2023 Dec 31",
-          dropDate: "2023 Set 15",
-          withdrawalDate: "2023 Set 05",
-          credits: 3,
-          campus: "South",
-          deliveryMode: "Any-time Online"
-        },
-        {
-          code: 'SODV2202',
-          name: 'Object Oriented Programming',
-          startDate: "2023 Set 01",
-          endDate: "2023 Dec 31",
-          dropDate: "2023 Set 15",
-          withdrawalDate: "2023 Set 05",
-          credits: 3,
-          campus: "South",
-          deliveryMode: "In Class"
-        },
-      ],
-      program: [
-        {
-          name: 'Software Development',
-          term: 3
-        }
-      ]
-    };
-  }
+const ViewMyCourses = ({ loggedUser, programs, terms, courses }) => {
 
-  render() {
-    return (
-      <div className='vmcbody'>
-        {this.state.program.map((program, index) =>
-          <ul>
-            <li>Program Name: {program.name} </li>
-            <li>Term: {program.term}</li>
-          </ul>
-        )}
-        <h1>My Courses</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th>Drop Date</th>
-              <th>Withdrawal Date</th>
-              <th>Credits</th>
-              <th>Campus</th>
-              <th>Delivery Mode</th>
+  // const urlListPrograms = 'http://localhost:8000/listPrograms';
+  // const urlListTerms = 'http://localhost:8000/listTerms';
+  // const urlListCourses = 'http://localhost:8000/listCourses';
+
+  
+  // const {data: programs} = useFetch(urlListPrograms);
+  // const {data: terms} = useFetch(urlListTerms);
+  // const {data: courses} = useFetch(urlListCourses);
+
+  console.log(programs);
+  console.log(terms);
+  console.log(courses);
+
+  const myPrograms = programs.filter((program) => (program.id === loggedUser.currentIdProgram));
+  const myTerms = terms.filter((term) => (term.id === loggedUser.currentIdTerm));
+  const myCourses = courses.filter((course) => (loggedUser.currentIdCourses.some(v => (v===course.id))));
+
+  console.log(myPrograms);
+  console.log(myTerms);
+  console.log(myCourses);
+
+
+  return (
+    <div className='vmcbody'>
+      {myPrograms.map((program) =>
+        <ul>
+          <li>Program Name: {program.nameProgram} </li>
+        </ul>
+      )}
+      {myTerms.map((term) =>
+        <ul>
+          <li>Term #: {term.nameTerm}</li>
+          <li>Start Date: {term.startTerm}</li>
+          <li>End Date: {term.endTerm}</li>
+        </ul>
+      )}
+      <h1>My Courses</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Credits</th>
+            <th>Fee</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {myCourses.map((course) => (
+            <tr key={course.id}>
+              <td>{course.codeCourse}</td>
+              <td>{course.nameCourse}</td>
+              <td>{course.creditCourse}</td>
+              <td>{course.feeCourse}</td>
+              <td>{course.descriptionCourse}</td>
             </tr>
-          </thead>
-          <tbody>
-            {this.state.courses.map((courses, index) => (
-              <tr key={index}>
-                <td>{courses.code}</td>
-                <td>{courses.name}</td>
-                <td>{courses.startDate}</td>
-                <td>{courses.endDate}</td>
-                <td>{courses.dropDate}</td>
-                <td>{courses.withdrawalDate}</td>
-                <td>{courses.credits}</td>
-                <td>{courses.campus}</td>
-                <td>{courses.deliveryMode}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  }
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default ViewMyCourses;

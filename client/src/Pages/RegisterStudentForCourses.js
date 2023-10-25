@@ -1,7 +1,7 @@
 import useFetch from '../Hooks/useFetch';
 import CoursesList from '../Components/Lists/CoursesList';
 
-const RegisterStudentForCourses = () => {
+const RegisterStudentForCourses = ({ loggedUser }) => {
 
   const urlListCourses = 'http://localhost:8000/listCourses';
 

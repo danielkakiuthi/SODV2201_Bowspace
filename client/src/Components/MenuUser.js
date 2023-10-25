@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const MenuUser = () => {
-  return (      
+
+const MenuUser = ({ loggedUser }) => {
+  return (
       <div className="menu-user">
-        <Link to="/signUp">SignUp</Link>
-        <Link to="/login">Login</Link>
+        <Link to= {`/users/${loggedUser.id}`}>Logged in as: {loggedUser.emailUser}</Link>
+        <Link to="/logout">Logout</Link>
       </div>
   );
 }

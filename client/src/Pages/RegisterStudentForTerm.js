@@ -1,7 +1,7 @@
 import useFetch from '../Hooks/useFetch';
 import TermsList from '../Components/Lists/TermsList';
 
-const RegisterStudentForTerm = () => {
+const RegisterStudentForTerm = ({ loggedUser }) => {
 
   const urlListTerms = 'http://localhost:8000/listTerms';
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import useToken from './Hooks/useToken'
 import Header from './Components/Header';
@@ -21,11 +21,23 @@ import RegisterStudentForTerm from './Pages/RegisterStudentForTerm';
 import RegisterStudentForCourses from './Pages/RegisterStudentForCourses';
 import ViewMyCourses from './Pages/ViewMyCourses';
 import Error from './Pages/Error';
+import useFetch from './Hooks/useFetch';
 
 
 function App() {
 
-  const { token, setToken } = useToken();
+  const { token, setToken } = useToken("");
+  const [loggedUser, setLoggedUser] = useState(null);
+
+  const urlListUsers = 'http://localhost:8000/listUsers';
+  const urlListPrograms = 'http://localhost:8000/listPrograms';
+  const urlListTerms = 'http://localhost:8000/listTerms';
+  const urlListCourses = 'http://localhost:8000/listCourses';
+
+  const {data: users, isPending: isPendingUsers, error: errorUsers} = useFetch(urlListUsers);
+  const {data: programs, isPending: isPendingPrograms, error: errorPrograms} = useFetch(urlListPrograms);
+  const {data: terms, isPending: isPendingTerms, error: errorTerms} = useFetch(urlListTerms);
+  const {data: courses, isPending: isPendingCourses, error: errorCourses} = useFetch(urlListCourses);
 
 
   if(!token) {
@@ -33,9 +45,10 @@ function App() {
       <>
         <BrowserRouter>
           <Routes>
-            <Route index path='/' element={ <Login setToken={setToken} /> } />
-            <Route path='/login' element={ <Login setToken={setToken} /> } />
+            <Route index path='/' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} /> } />
+            <Route path='/login' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} /> } />
             <Route path='/signUp' element={ <AddUser /> } />
+            <Route path='/logout' element={ <Logout setToken={setToken} setLoggedUser={setLoggedUser} /> } />
           </Routes>
         </BrowserRouter>
       </>
@@ -45,22 +58,21 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header loggedUser={loggedUser}/>
 
         <div className="content">
           <Routes>
             {/* Navbar Routes */}
-            <Route index path='/' element={ <Home /> } />
+            <Route index path='/' element={ <Home users={users} programs={programs} terms={terms} courses={courses} /> } />
             <Route path='/about' element={ <About /> } />
             <Route path='/programsInformation' element={ <ProgramsInformation /> } />
             <Route path='/contact' element={ <Contact /> } />
 
             
             {/* MenuUser Routes */}
-            <Route path='/signUp' element={ <AddUser /> } />
-            <Route path='/login' element={ <Login setToken={setToken} /> } />
-            <Route path='/logout' element={ <Logout /> } />
-
+            <Route path='/logout' element={ <Logout setToken={setToken} setLoggedUser={setLoggedUser} /> } />
+            <Route path='/login' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} /> } />
+            
             {/* Add Routes */}
             <Route path='/addUser' element={ <AddUser /> } />
             <Route path='/addProgram' element={ <AddProgram /> } />
@@ -74,9 +86,9 @@ function App() {
             <Route path='/courses/:id' element={ <CourseDetails /> } />
             
             {/* Custom Routes */}
-            <Route path='/registerStudentForTerm' element={ <RegisterStudentForTerm /> } />
-            <Route path='/registerStudentForCourses' element={ <RegisterStudentForCourses /> } />
-            <Route path='/viewMyCourses' element={ <ViewMyCourses /> } />
+            <Route path='/registerStudentForTerm' element={ <RegisterStudentForTerm loggedUser={loggedUser} /> } />
+            <Route path='/registerStudentForCourses' element={ <RegisterStudentForCourses loggedUser={loggedUser} /> } />
+            <Route path='/viewMyCourses' element={ <ViewMyCourses loggedUser={loggedUser} programs={programs} terms={terms} courses={courses} /> } />
             
             {/* Default Route */}
             <Route path='/*' element={ <Error /> } />

@@ -16,29 +16,29 @@ const loginUser = async (credentials) => {
 }
 
 
-const Login = ({ setToken }) => {
+const Login = ({ setToken,setLoggedUser }) => {
 
   const urlListUsers = 'http://localhost:8000/listUsers';
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const { data: users } = useFetch(urlListUsers);
-  console.log(users);
+  let token = null;
 
   const handleSumbit = async (e) => {
     e.preventDefault();
 
-    if(users.some(v => (v.emailUser===email && v.passwordUser===password))) {
-      const token = await loginUser({
-        email,
-        password
-      })
-      setToken(token);
-    }
-    else {
-      alert('Credentials Not Found!');
-    }
-
+    users.map(async (user) => {
+      if(user.emailUser===email && user.passwordUser===password) {
+        token = await loginUser({
+          email,
+          password
+        })
+        setToken(token);
+        setLoggedUser(user);
+      }
+    })
   }
+
 
 
   return (
