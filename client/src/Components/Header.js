@@ -9,7 +9,7 @@ const Header = ({ loggedUser }) => {
       <MenuUser loggedUser={loggedUser} />
       <img src={logo} alt="Logo" className='header-image' />;
       <h1 className='bowspace'>Bowspace</h1>
-      <Navbar />
+      <Navbar loggedUser={loggedUser} />
 
     </div>
   );

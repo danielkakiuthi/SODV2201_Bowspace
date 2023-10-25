@@ -1,19 +1,15 @@
-import useFetch from '../Hooks/useFetch';
 import CoursesList from '../Components/Lists/CoursesList';
 
-const RegisterStudentForCourses = ({ loggedUser }) => {
+const RegisterStudentForCourses = ({ loggedUser, courses }) => {
 
-  const urlListCourses = 'http://localhost:8000/listCourses';
-
-  const {data: courses, isPending: isPendingCourses, error: errorCourses} = useFetch(urlListCourses);
+  //const myCourses = courses.filter((course) => (loggedUser.currentIdCourses.some(v => (v===course.id))));
+  const otherCourses = courses.filter((course) => (loggedUser.currentIdCourses.some(v => (v!==course.id))));
+  
 
   return (
     <div className="register-student-for-courses">
       <h2>Register Student For Courses Page</h2>
-
-      { errorCourses && <div>{ errorCourses }</div> }
-      { isPendingCourses && <div>Loading...</div> }
-      { courses && <CoursesList courses={courses} /> }
+      { otherCourses && <CoursesList courses={otherCourses} /> }
     </div>
   );
 }

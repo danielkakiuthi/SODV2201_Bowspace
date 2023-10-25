@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const EditCourse = ({ course }) => {
+const EditCourse = ({ course, loggedUser }) => {
 
   const [isPending, setIsPending] = useState(false);
   const [idTerm, setIdTerm] = useState(course.idTerm);
@@ -11,13 +11,14 @@ const EditCourse = ({ course }) => {
   const [credit, setCredit] = useState(course.creditCourse);
   const [fee, setFee] = useState(course.feeCourse);
   const [description, setDescription] = useState(course.descriptionCourse);
-  const url = `http://localhost:8000/listCourses/${ course.id }`;
   const navigate = useNavigate();
-
-
+  
+  
   const handleUpdate = (e) => {
     e.preventDefault();
     setIsPending(true);
+
+    const urlUpdate = `http://localhost:8000/listCourses/${ course.id }`;
     const data = {
       idTerm: idTerm,
       idProgram: idProgram,
@@ -27,19 +28,51 @@ const EditCourse = ({ course }) => {
       feeCourse: fee,
       descriptionCourse: description
     };
-    fetch(url, {
+    fetch(urlUpdate, {
       method: 'PUT',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
       console.log('Course Updated!');
       setIsPending(false);
+      navigate("/");
+    })
+  }
+
+
+  const handleRegister = () => {
+    setIsPending(true);
+    const myCurrentIdCourses = loggedUser.currentIdCourses;
+    const newCurrentIdCourses = [...myCurrentIdCourses, course.id]
+    const urlRegister = `http://localhost:8000/listUsers/${ loggedUser.id }`;
+    const data = {
+      emailUser: loggedUser.emailUser,
+      passwordUser: loggedUser.passwordUser,
+      isAdmin: loggedUser.isAdmin,
+      firstNameUser: loggedUser.firstNameUser,
+      lastNameUser: loggedUser.lastNameUser,
+      phoneUser: loggedUser.phoneUser,
+      dateBirthUser: loggedUser.dateBirthUser,
+      currentIdProgram: loggedUser.currentIdProgram,
+      currentIdTerm: loggedUser.currentIdTerm,
+      currentIdCourses: newCurrentIdCourses,
+      finishedIdCourses: loggedUser.finishedIdCourses
+    }
+    fetch(urlRegister, {
+      method: 'PUT',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    }).then(() => {
+      console.log('User Courses Updated!');
+      setIsPending(false);
+      navigate("/");
     })
   }
 
 
   const handleDelete = () => {
-    fetch(url, {
+    const urlDelete = `http://localhost:8000/listCourses/${ course.id }`;
+    fetch(urlDelete, {
       method: 'DELETE'
     }).then(() => {
       navigate("/");
@@ -104,6 +137,7 @@ const EditCourse = ({ course }) => {
         />
         { !isPending && <button>Update Course</button> }
         { isPending && <button disabled>Loading Course...</button> }
+        <button onClick={handleRegister} className='register-button'>Register</button>
         <button onClick={handleDelete} className='delete-button'>Delete Course</button>
       </form>
     </div>

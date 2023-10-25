@@ -27,7 +27,11 @@ const EditUser = ({ user }) => {
       firstNameUser: firstName,
       lastNameUser: lastName,
       phoneUser: phone,
-      dateBirthUser: dateBirth
+      dateBirthUser: dateBirth,
+      currentIdProgram: currentIdProgram,
+      currentIdTerm: currentIdTerm,
+      currentIdCourses: currentIdCourses,
+      finishedIdCourses: finishedIdCourses
     };
     fetch(url, {
       method: 'PUT',

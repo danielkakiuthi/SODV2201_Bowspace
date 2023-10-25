@@ -35,7 +35,7 @@ const ContactForm = ({ onSubmit }) => {
         placeholder="What do you need help with ?"
         required
         onChange={(e) => setMessage(e.target.value)}
-        rows={10} // Isso define inicialmente 4 linhas visíveis
+        rows={10}
       />
       <button type="submit">Send</button>
     </form>

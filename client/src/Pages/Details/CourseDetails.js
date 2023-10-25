@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../Hooks/useFetch";
 import EditCourse from "../../Components/Edit/EditCourse";
 
-const CourseDetails = () => {
+const CourseDetails = ({ loggedUser }) => {
   const { id } = useParams();
   const url = `http://localhost:8000/listCourses/${ id }`
   const { data: course, error, isPending } = useFetch(url);
@@ -11,7 +11,7 @@ const CourseDetails = () => {
     <div className="course-details">
       { isPending && <div>Loading...</div> }
       { error && <div>{ error }</div> }
-      { course && <EditCourse course={course} />}
+      { course && <EditCourse course={course} loggedUser={loggedUser} />}
     </div>
   );
 }

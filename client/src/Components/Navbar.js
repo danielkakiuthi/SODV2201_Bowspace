@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({ loggedUser }) => {
   return (
     <nav className="navbar">
       <div className="navbarlinks">
@@ -9,9 +9,9 @@ const Navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/programsInformation">Programs Information</Link>        
-        <Link to="/registerStudentForTerm">Register For Term</Link>
-        <Link to="/registerStudentForCourses">Register For Courses</Link>
-        <Link to="/viewMyCourses">My Courses</Link>
+        { loggedUser && <Link to="/registerStudentForTerm">Register For Term</Link>}
+        { loggedUser && <Link to="/registerStudentForCourses">Register For Courses</Link>}
+        { loggedUser && <Link to="/viewMyCourses">My Courses</Link>}
       </div>
     </nav>
   );

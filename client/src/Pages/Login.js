@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import useFetch from '../Hooks/useFetch';
+import { useNavigate } from "react-router-dom";
 
-
-const url = `http://localhost:8080/login`
 
 const loginUser = async (credentials) => {
+  
+  const url = `http://localhost:8080/login`;
+  
   return fetch(url, {
     method: 'POST',
     headers: {
@@ -16,12 +17,12 @@ const loginUser = async (credentials) => {
 }
 
 
-const Login = ({ setToken,setLoggedUser }) => {
+const Login = ({ setToken, setLoggedUser, users }) => {
 
-  const urlListUsers = 'http://localhost:8000/listUsers';
+  const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const { data: users } = useFetch(urlListUsers);
+
   let token = null;
 
   const handleSumbit = async (e) => {
@@ -37,8 +38,8 @@ const Login = ({ setToken,setLoggedUser }) => {
         setLoggedUser(user);
       }
     })
+    navigate("/");
   }
-
 
 
   return (
