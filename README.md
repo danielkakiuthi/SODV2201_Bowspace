@@ -7,7 +7,7 @@ From the `root` of the project:
 - move to the `client` folder by running `'cd client'`
 - run `'npm install'` to install frontend **node_modules** from **client/package.json**.
 
-# Run Backend
+# Run Database Service
 ## Json-server
 From the `root` of the project, run `'npm run json-server'` to run json-server.
 
@@ -15,6 +15,7 @@ From the `root` of the project, run `'npm run json-server'` to run json-server.
 
 json-server will be reading from **server/data/db.json**.
 
+# Run Backend
 ## Node
 From the `root` of the project (in a different terminal than the one running the json-server) run `'node server/index.js'`.
 
@@ -22,7 +23,7 @@ From the `root` of the project (in a different terminal than the one running the
 
 # Run Frontend
 ## React
-From the `root` of the project (in a different terminal than the one running the backend):
+From the `root` of the project (in a different terminal than the ones running the database service and the backend):
 - move to the `client` folder by running `'cd client'`
 - run `'npm start'` to execute the react-scripts
 
