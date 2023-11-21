@@ -25,13 +25,14 @@ function App() {
     <>
       { !token && <LoggedOutRoutes
         setToken={setToken}
+        loggedUser={loggedUser}
         setLoggedUser={setLoggedUser}
         users={users}
         programs={programs}
       />}
 
       { token && <LoggedInRoutes
-        token={token}
+        // token={token}
         setToken={setToken}
         loggedUser={loggedUser}
         setLoggedUser={setLoggedUser}

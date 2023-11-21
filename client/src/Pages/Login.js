@@ -25,7 +25,7 @@ const Login = ({ setToken, setLoggedUser, users }) => {
 
   let token = null;
 
-  const handleSumbit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     users.map(async (user) => {
@@ -46,7 +46,7 @@ const Login = ({ setToken, setLoggedUser, users }) => {
     <div className="login">
       <h2>Please Login</h2>
 
-      <form onSubmit={handleSumbit}>
+      <form onSubmit={handleSubmit}>
         <label>
           <p>Email</p>
           <input type="text" onChange={(e) => setEmail(e.target.value)}/>

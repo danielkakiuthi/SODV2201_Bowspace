@@ -8,13 +8,14 @@ import ProgramsInformation from '../../Pages/Navbar/ProgramsInformation';
 import Contact from '../../Pages/Navbar/Contact';
 
 const LoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs }) => {
+  console.log(users);
   return (
     <>
         <BrowserRouter>
           <Header loggedUser={loggedUser}/>
           <Routes>
             {/* Public Routes */}
-            <Route index path='/' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} /> } />
+            <Route index path='/' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />
             <Route path='/about' element={ <About /> } />
             <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} /> } />
             <Route path='/contact' element={ <Contact /> } />
