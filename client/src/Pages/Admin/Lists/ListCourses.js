@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const CoursesList = ({ courses }) => {
+const ListCourses = ({ courses }) => {
 
   const navigate = useNavigate();
 
@@ -20,4 +20,4 @@ const CoursesList = ({ courses }) => {
   );
 }
  
-export default CoursesList;
+export default ListCourses;

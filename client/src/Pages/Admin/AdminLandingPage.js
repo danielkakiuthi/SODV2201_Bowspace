@@ -1,22 +1,36 @@
-import UsersList from '../../Components/Lists/UsersList';
-import ProgramsList from '../../Components/Lists/ProgramsList';
-import TermsList from '../../Components/Lists/TermsList';
-import CoursesList from '../../Components/Lists/CoursesList';
+import { useNavigate } from "react-router-dom";
 
 
 const AdminLandingPage = ({users, programs, terms, courses}) => {
+
+  const navigate = useNavigate();
 
   return (
     <div className="home">
       <h1>Admin Landing Page</h1>
 
-        { users && <UsersList users={users} /> }
+        <table>
+          <tr>
+            <td><button onClick={() => navigate('/addUser')}>Add User</button></td>
+            <td><button onClick={() => navigate('/addProgram')}>Add Program</button></td>
+            <td><button onClick={() => navigate('/addTerm')}>Add Term</button></td>
+            <td><button onClick={() => navigate('/addCourse')}>Add Course</button></td>
+          </tr>
+          <tr>
+            <td><button onClick={() => navigate('/listUsers')}>List Users</button></td>
+            <td><button onClick={() => navigate('/listPrograms')}>List Programs</button></td>
+            <td><button onClick={() => navigate('/listTerms')}>List Terms</button></td>
+            <td><button onClick={() => navigate('/listCourses')}>List Courses</button></td>
+          </tr>
+        </table>
+
+        {/* { users && <UsersList users={users} /> }
 
         { programs && <ProgramsList programs={programs} /> }
 
         { terms && <TermsList terms={terms} /> }
 
-        { courses && <CoursesList courses={courses} /> }
+        { courses && <CoursesList courses={courses} /> } */}
     </div>
     
   );

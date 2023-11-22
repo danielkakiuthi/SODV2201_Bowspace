@@ -1,4 +1,4 @@
-import CoursesList from '../../Components/Lists/CoursesList';
+import ListCourses from '../Admin/Lists/ListCourses';
 
 const RegisterStudentForCourses = ({ loggedUser, courses }) => {
 
@@ -9,7 +9,7 @@ const RegisterStudentForCourses = ({ loggedUser, courses }) => {
   return (
     <div className="register-student-for-courses">
       <h2>Register Student For Courses Page</h2>
-      { otherCourses && <CoursesList courses={otherCourses} /> }
+      { otherCourses && <ListCourses courses={otherCourses} /> }
     </div>
   );
 }

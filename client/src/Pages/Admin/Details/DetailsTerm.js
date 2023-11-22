@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import EditTerm from "../../../Components/Edit/EditTerm";
 
-const TermDetails = () => {
+const DetailsTerm = () => {
   const { id } = useParams();
   const url = `http://localhost:8000/listTerms/${ id }`
   const { data: term, error, isPending } = useFetch(url);
@@ -16,4 +16,4 @@ const TermDetails = () => {
   );
 }
  
-export default TermDetails;
+export default DetailsTerm;

@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import EditUser from "../../../Components/Edit/EditUser";
 
-const UserDetails = () => {
+const DetailsUser = () => {
   const { id } = useParams();
   const url = `http://localhost:8000/listUsers/${ id }`
   const { data: user, error, isPending } = useFetch(url);
@@ -16,4 +16,4 @@ const UserDetails = () => {
   );
 }
  
-export default UserDetails;
+export default DetailsUser;

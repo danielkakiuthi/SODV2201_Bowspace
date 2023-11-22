@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import EditProgram from "../../../Components/Edit/EditProgram";
 
-const ProgramDetails = () => {
+const DetailsProgram = () => {
   const { id } = useParams();
   const url = `http://localhost:8000/listPrograms/${ id }`
   const { data: program, error, isPending } = useFetch(url);
@@ -16,4 +16,4 @@ const ProgramDetails = () => {
   );
 }
  
-export default ProgramDetails;
+export default DetailsProgram;

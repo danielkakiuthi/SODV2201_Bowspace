@@ -11,10 +11,14 @@ import AddUser from '../../Pages/Admin/Add/AddUser';
 import AddProgram from '../../Pages/Admin/Add/AddProgram';
 import AddTerm from '../../Pages/Admin/Add/AddTerm';
 import AddCourse from '../../Pages/Admin/Add/AddCourse';
-import UserDetails from '../../Pages/Admin/Details/UserDetails';
-import ProgramDetails from '../../Pages/Admin/Details/ProgramDetails';
-import TermDetails from '../../Pages/Admin/Details/TermDetails';
-import CourseDetails from '../../Pages/Admin/Details/CourseDetails';
+import DetailsUser from '../../Pages/Admin/Details/DetailsUser';
+import DetailsProgram from '../../Pages/Admin/Details/DetailsProgram';
+import DetailsTerm from '../../Pages/Admin/Details/DetailsTerm';
+import DetailsCourse from '../../Pages/Admin/Details/DetailsCourse';
+import ListUsers from '../../Pages/Admin/Lists/ListUsers';
+import ListPrograms from '../../Pages/Admin/Lists/ListPrograms';
+import ListTerms from '../../Pages/Admin/Lists/ListTerms';
+import ListCourses from '../../Pages/Admin/Lists/ListCourses';
 import Error from '../../Pages/Error';
 
 const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs, terms, courses }) => {
@@ -42,10 +46,16 @@ const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, progr
             <Route path='/addCourse' element={ <AddCourse /> } />
             
             {/* Details Routes */}
-            <Route path='/users/:id' element={ <UserDetails /> } />
-            <Route path='/programs/:id' element={ <ProgramDetails /> } />
-            <Route path='/terms/:id' element={ <TermDetails /> } />
-            <Route path='/courses/:id' element={ <CourseDetails loggedUser={loggedUser} /> } />
+            <Route path='/users/:id' element={ <DetailsUser /> } />
+            <Route path='/programs/:id' element={ <DetailsProgram /> } />
+            <Route path='/terms/:id' element={ <DetailsTerm /> } />
+            <Route path='/courses/:id' element={ <DetailsCourse loggedUser={loggedUser} /> } />
+
+            {/* List Routes */}
+            <Route path='/listUsers' element={ <ListUsers users={users} /> } />
+            <Route path='/listPrograms' element={ <ListPrograms programs={programs} /> } />
+            <Route path='/listTerms' element={ <ListTerms terms={terms} /> } />
+            <Route path='/listCourses' element={ <ListCourses courses={courses} /> } />
             
             {/* Default Route */}
             <Route path='/*' element={ <Error /> } />

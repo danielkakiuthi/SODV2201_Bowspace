@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const UsersList = ({ users }) => {
+const ListUsers = ({ users }) => {
 
   const navigate = useNavigate();
 
@@ -20,4 +20,4 @@ const UsersList = ({ users }) => {
   );
 }
  
-export default UsersList;
+export default ListUsers;

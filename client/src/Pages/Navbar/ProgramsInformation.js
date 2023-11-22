@@ -1,4 +1,4 @@
-import ProgramsList from '../../Components/Lists/ProgramsList';
+import ProgramsList from '../Admin/Lists/ListPrograms';
 
 const ProgramsInformation = ({ programs }) => {
 

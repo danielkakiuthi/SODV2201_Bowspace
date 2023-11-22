@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const TermsList = ({ terms }) => {
+const ListTerms = ({ terms }) => {
   
   const navigate = useNavigate();
 
@@ -20,4 +20,4 @@ const TermsList = ({ terms }) => {
   );
 }
  
-export default TermsList;
+export default ListTerms;
