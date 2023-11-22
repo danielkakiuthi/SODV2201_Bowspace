@@ -132,7 +132,6 @@ const AddUser = () => {
         { !isPending && <button>Add User</button> }
         { isPending && <button disabled>Loading User...</button> }
       </form>
-      <a href="/login">Login</a>
       
     </div>
   );

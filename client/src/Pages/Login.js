@@ -58,8 +58,8 @@ const Login = ({ setToken, setLoggedUser, users }) => {
         <div>
           <button type="submit">Login</button>
         </div>
+        <a href="/signUp">SignUp</a>
       </form>
-      <a href="/signUp">SignUp</a>
 
     </div>
   );

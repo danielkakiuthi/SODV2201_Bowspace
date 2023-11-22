@@ -13,18 +13,21 @@ const AdminLoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, prog
     <>
         <BrowserRouter>
           <Header loggedUser={loggedUser}/>
-          <Routes>
-            {/* Public Routes */}
-            <Route index path='/' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />
-            <Route path='/about' element={ <About /> } />
-            <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} /> } />
-            <Route path='/contact' element={ <Contact /> } />
 
-            {/* MenuUser Routes */}
-            <Route path='/login' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />
-            <Route path='/signUp' element={ <AddUser /> } />
-            <Route path='/logout' element={ <Logout setToken={setToken} setLoggedUser={setLoggedUser} /> } />
-          </Routes>
+          <div className="content">
+            <Routes>
+              {/* Public Routes */}
+              <Route index path='/' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />
+              <Route path='/about' element={ <About /> } />
+              <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} /> } />
+              <Route path='/contact' element={ <Contact /> } />
+
+              {/* MenuUser Routes */}
+              <Route path='/login' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />
+              <Route path='/signUp' element={ <AddUser /> } />
+              <Route path='/logout' element={ <Logout setToken={setToken} setLoggedUser={setLoggedUser} /> } />
+            </Routes>
+          </div>
         </BrowserRouter>
       </>
   );
