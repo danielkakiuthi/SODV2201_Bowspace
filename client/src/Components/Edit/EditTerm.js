@@ -23,6 +23,7 @@ const EditTerm = ({ term }) => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('Term Updated!');
+      alert('Term Updated!');
       setIsPending(false);
     })
   }

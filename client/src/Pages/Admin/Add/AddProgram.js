@@ -24,6 +24,7 @@ const AddProgram = () => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('New Program Added!');
+      alert('New Program Added!');
       setIsPending(false);
     })
   }

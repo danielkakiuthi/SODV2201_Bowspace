@@ -39,6 +39,7 @@ const EditUser = ({ user }) => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('User Updated!');
+      alert('User Updated!');
       setIsPending(false);
     })
   }

@@ -30,6 +30,7 @@ const AddCourse = () => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('New Course Added!');
+      alert('New Course Added!');
       setIsPending(false);
     })
   }

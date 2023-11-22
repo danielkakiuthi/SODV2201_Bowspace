@@ -24,6 +24,7 @@ const EditProgram = ({ program }) => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('Program Updated!');
+      alert('Program Updated!');
       setIsPending(false);
     })
   }

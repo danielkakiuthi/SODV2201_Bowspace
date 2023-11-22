@@ -37,6 +37,7 @@ const AddUser = () => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('New User Added!');
+      alert('New User Added!');
       setIsPending(false);
     })
   }

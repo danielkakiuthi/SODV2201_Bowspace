@@ -22,6 +22,7 @@ const AddTerm = () => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('New Term Added!');
+      alert('New Term Added!');
       setIsPending(false);
     })
   }

@@ -34,6 +34,7 @@ const EditCourse = ({ course, loggedUser }) => {
       body: JSON.stringify(data)
     }).then(() => {
       console.log('Course Updated!');
+      alert('Course Updated!');
       setIsPending(false);
       navigate("/");
     })
