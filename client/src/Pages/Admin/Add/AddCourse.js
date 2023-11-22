@@ -41,62 +41,25 @@ const AddCourse = () => {
 
       <form onSubmit={handleSubmit}>
         <label>ID Term:</label>
-        <input
-          type="text"
-          required
-          value={idTerm}
-          onChange={(e) => setIdTerm(e.target.value)}
-          placeholder='1'
-        />
+        <input type="text" required value={idTerm} onChange={(e) => setIdTerm(e.target.value)} placeholder='1' />
+
         <label>ID Program:</label>
-        <input
-          type="text"
-          required
-          value={idProgram}
-          onChange={(e) => setIdProgram(e.target.value)}
-          placeholder='1'
-        />
+        <input type="text" required value={idProgram} onChange={(e) => setIdProgram(e.target.value)} placeholder='1' />
+
         <label>Code:</label>
-        <input
-          type="text"
-          required
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          placeholder='SODV2201'
-        />
+        <input type="text" required value={code} onChange={(e) => setCode(e.target.value)} placeholder='SODV2201' />
+
         <label>Name:</label>
-        <input
-          type="text"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder='Web Programming'
-        />
+        <input type="text" required value={name} onChange={(e) => setName(e.target.value)} placeholder='Web Programming' />
+
         <label>Credits:</label>
-        <input
-          type="text"
-          required
-          value={credit}
-          onChange={(e) => setCredit(e.target.value)}
-          placeholder='3'
-        />
+        <input type="text" required value={credit} onChange={(e) => setCredit(e.target.value)} placeholder='3' />
+
         <label>Fee:</label>
-        <input
-          type="text"
-          required
-          value={fee}
-          onChange={(e) => setFee(e.target.value)}
-          placeholder='1900.00'
-        />
+        <input type="text" required value={fee} onChange={(e) => setFee(e.target.value)} placeholder='1900.00' />
+
         <label>Description:</label>
-        <textarea
-          type="text"
-          required
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          rows="10"
-          placeholder='This course gives learners the opportunity to enhance and enrich their skills in web programming. Learners develop web applications using three-tier architecture, session management, object-oriented techniques and advanced database interactions. In addition, the course explores concepts such as advanced cascading style sheet (CSS). Learners develop rich interactive web applications with authentication and security.'
-        />
+        <textarea type="text" required value={description} onChange={(e) => setDescription(e.target.value)} rows="10" placeholder='This course gives learners the opportunity to enhance and enrich their skills in web programming. Learners develop web applications using three-tier architecture, session management, object-oriented techniques and advanced database interactions. In addition, the course explores concepts such as advanced cascading style sheet (CSS). Learners develop rich interactive web applications with authentication and security.' />
         
         { !isPending && <button>Add Course</button> }
         { isPending && <button disabled>Loading Course...</button> }

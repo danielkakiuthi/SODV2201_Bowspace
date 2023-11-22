@@ -33,26 +33,14 @@ const AddTerm = () => {
 
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input
-          type="text"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <input type="text" required value={name} onChange={(e) => setName(e.target.value)} placeholder='Term 1' />
+        
         <label>Start Date:</label>
-        <input
-          type="text"
-          required
-          value={start}
-          onChange={(e) => setStart(e.target.value)}
-        />
+        <input type="text" required value={start} onChange={(e) => setStart(e.target.value)} placeholder='September 1' />
+        
         <label>End Date:</label>
-        <input
-          type="text"
-          required
-          value={end}
-          onChange={(e) => setEnd(e.target.value)}
-        />
+        <input type="text" required value={end} onChange={(e) => setEnd(e.target.value)} placeholder='December 20' />
+        
         { !isPending && <button>Add Term</button> }
         { isPending && <button disabled>Loading Term...</button> }
       </form>
