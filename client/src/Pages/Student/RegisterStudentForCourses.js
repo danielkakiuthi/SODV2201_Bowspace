@@ -1,4 +1,4 @@
-import CoursesList from '../Components/Lists/CoursesList';
+import CoursesList from '../../Components/Lists/CoursesList';
 
 const RegisterStudentForCourses = ({ loggedUser, courses }) => {
 

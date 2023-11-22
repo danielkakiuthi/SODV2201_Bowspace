@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch";
-import EditTerm from "../../Components/Edit/EditTerm";
+import useFetch from "../../../Hooks/useFetch";
+import EditTerm from "../../../Components/Edit/EditTerm";
 
 const TermDetails = () => {
   const { id } = useParams();

@@ -1,4 +1,4 @@
-import TermsList from '../Components/Lists/TermsList';
+import TermsList from '../../Components/Lists/TermsList';
 
 const RegisterStudentForTerm = ({ loggedUser, terms }) => {
 

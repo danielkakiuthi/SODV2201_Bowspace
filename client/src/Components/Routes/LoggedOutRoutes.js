@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from '../../Pages/Login';
 import Logout from '../../Pages/Logout';
-import AddUser from '../../Pages/Add/AddUser';
+import AddUser from '../../Pages/Admin/Add/AddUser';
 import Header from '../Header';
 import About from '../../Pages/Navbar/About';
 import ProgramsInformation from '../../Pages/Navbar/ProgramsInformation';
 import Contact from '../../Pages/Navbar/Contact';
 
-const LoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs }) => {
+const AdminLoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs }) => {
   console.log(users);
   return (
     <>
@@ -30,4 +30,4 @@ const LoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs 
   );
 }
  
-export default LoggedOutRoutes;
+export default AdminLoggedOutRoutes;

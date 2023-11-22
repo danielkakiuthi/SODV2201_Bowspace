@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch";
-import EditProgram from "../../Components/Edit/EditProgram";
+import useFetch from "../../../Hooks/useFetch";
+import EditProgram from "../../../Components/Edit/EditProgram";
 
 const ProgramDetails = () => {
   const { id } = useParams();

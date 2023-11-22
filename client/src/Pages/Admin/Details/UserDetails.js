@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch";
-import EditUser from "../../Components/Edit/EditUser";
+import useFetch from "../../../Hooks/useFetch";
+import EditUser from "../../../Components/Edit/EditUser";
 
 const UserDetails = () => {
   const { id } = useParams();

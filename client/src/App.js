@@ -2,7 +2,8 @@ import React, { useState} from 'react'
 import useToken from './Hooks/useToken'
 import useFetch from './Hooks/useFetch';
 import LoggedOutRoutes from './Components/Routes/LoggedOutRoutes';
-import LoggedInRoutes from './Components/Routes/LoggedInRoutes';
+import AdminLoggedInRoutes from './Components/Routes/AdminLoggedInRoutes';
+import StudentLoggedInRoutes from './Components/Routes/StudentLoggedInRoutes';
 
 
 function App() {
@@ -31,8 +32,17 @@ function App() {
         programs={programs}
       />}
 
-      { token && <LoggedInRoutes
-        // token={token}
+      { token && loggedUser.isAdmin && <AdminLoggedInRoutes
+        setToken={setToken}
+        loggedUser={loggedUser}
+        setLoggedUser={setLoggedUser}
+        users={users}
+        programs={programs}
+        terms={terms}
+        courses={courses}
+      />}
+
+      { token && !loggedUser.isAdmin && <StudentLoggedInRoutes
         setToken={setToken}
         loggedUser={loggedUser}
         setLoggedUser={setLoggedUser}

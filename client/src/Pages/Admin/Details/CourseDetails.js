@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../../Hooks/useFetch";
-import EditCourse from "../../Components/Edit/EditCourse";
+import useFetch from "../../../Hooks/useFetch";
+import EditCourse from "../../../Components/Edit/EditCourse";
 
 const CourseDetails = ({ loggedUser }) => {
   const { id } = useParams();
