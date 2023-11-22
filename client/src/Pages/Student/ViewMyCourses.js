@@ -6,18 +6,7 @@ const ViewMyCourses = ({ loggedUser, programs, terms, courses }) => {
 
   return (
     <div className='vmcbody'>
-      {myPrograms.map((program) =>
-        <ul key={program.id}>
-          <li>Program Name: {program.nameProgram} </li>
-        </ul>
-      )}
-      {myTerms.map((term) =>
-        <ul key={term.id}>
-          <li>Term #: {term.nameTerm}</li>
-          <li>Start Date: {term.startTerm}</li>
-          <li>End Date: {term.endTerm}</li>
-        </ul>
-      )}
+      
       <h1>My Courses</h1>
       <table>
         <thead>

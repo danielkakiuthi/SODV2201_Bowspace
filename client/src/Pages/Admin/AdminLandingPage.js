@@ -6,7 +6,7 @@ const AdminLandingPage = ({users, programs, terms, courses}) => {
   const navigate = useNavigate();
 
   return (
-    <div className="home">
+    <div className="adminLandingPage">
       <h1>Admin Landing Page</h1>
 
         <table>
@@ -24,13 +24,6 @@ const AdminLandingPage = ({users, programs, terms, courses}) => {
           </tr>
         </table>
 
-        {/* { users && <UsersList users={users} /> }
-
-        { programs && <ProgramsList programs={programs} /> }
-
-        { terms && <TermsList terms={terms} /> }
-
-        { courses && <CoursesList courses={courses} /> } */}
     </div>
     
   );
