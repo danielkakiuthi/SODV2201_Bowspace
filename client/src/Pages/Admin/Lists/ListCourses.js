@@ -5,10 +5,10 @@ const ListCourses = ({ courses }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="courses-list">
+    <div className="listPreview">
       <h1>Courses List:</h1>
       {courses.map((course) => (
-        <div className="preview" key={course.id}>
+        <div key={course.id}>
           <Link to={`/courses/${course.id}`}>
             <h2>[id Course: {course.id}] {course.codeCourse} - {course.nameCourse}</h2>
             <p>{course.descriptionCourse}</p>

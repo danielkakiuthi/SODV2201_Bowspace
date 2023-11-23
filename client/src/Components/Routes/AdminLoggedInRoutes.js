@@ -27,12 +27,12 @@ const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, progr
       <BrowserRouter>
         <Header loggedUser={loggedUser}/>
 
-        <div className="content">
+        <div className="configuredRoutes">
           <Routes>
             {/* Public Routes */}
             <Route index path='/' element={ <AdminLandingPage users={users} programs={programs} terms={terms} courses={courses} /> } />
             <Route path='/about' element={ <About /> } />
-            <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} /> } />
+            <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} loggedUser={loggedUser} /> } />
             <Route path='/contact' element={ <Contact /> } />
 
             {/* MenuUser Routes */}
@@ -53,7 +53,7 @@ const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, progr
 
             {/* List Routes */}
             <Route path='/listUsers' element={ <ListUsers users={users} /> } />
-            <Route path='/listPrograms' element={ <ListPrograms programs={programs} /> } />
+            <Route path='/listPrograms' element={ <ListPrograms programs={programs} loggedUser={loggedUser} /> } />
             <Route path='/listTerms' element={ <ListTerms terms={terms} /> } />
             <Route path='/listCourses' element={ <ListCourses courses={courses} /> } />
             

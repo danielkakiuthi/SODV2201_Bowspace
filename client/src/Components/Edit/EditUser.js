@@ -46,7 +46,7 @@ const EditUser = ({ user }) => {
 
   
   return (
-    <div className="edit-user">
+    <div className="addOrEditPage">
       <h2>Edit User Page</h2>
       <form onSubmit={handleSubmit}>
         <h3>User Id: {user.id}</h3>

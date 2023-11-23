@@ -30,7 +30,7 @@ const EditProgram = ({ program }) => {
   }
 
   return (
-    <div className="edit-program">
+    <div className="addOrEditPage">
       <h2>Edit Program Page</h2>
       <form onSubmit={handleSubmit}>
         <h3>Program Id: {program.id}</h3>

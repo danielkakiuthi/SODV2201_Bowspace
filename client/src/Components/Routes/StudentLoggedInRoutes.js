@@ -18,12 +18,12 @@ const StudentLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, pro
       <BrowserRouter>
         <Header loggedUser={loggedUser}/>
 
-        <div className="content">
+        <div className="configuredRoutes">
           <Routes>
             {/* Public Routes */}
             <Route index path='/' element={ <StudentLandingPage loggedUser={loggedUser} users={users} programs={programs} terms={terms} courses={courses} /> } />
             <Route path='/about' element={ <About /> } />
-            <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} /> } />
+            <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} loggedUser={loggedUser} /> } />
             <Route path='/contact' element={ <Contact /> } />
 
             {/* MenuUser Routes */}

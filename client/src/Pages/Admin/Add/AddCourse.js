@@ -37,7 +37,7 @@ const AddCourse = () => {
 
 
   return (
-    <div className="add-course">
+    <div className="addOrEditPage">
       <h1>Add Course Page</h1>
 
       <form onSubmit={handleSubmit}>

@@ -27,7 +27,7 @@ const Login = ({ setToken, setLoggedUser, users }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(users);
     users.map(async (user) => {
       if(user.emailUser===email && user.passwordUser===password) {
         token = await loginUser({
@@ -36,6 +36,7 @@ const Login = ({ setToken, setLoggedUser, users }) => {
         })
         setToken(token);
         setLoggedUser(user);
+        window.sessionStorage.setItem("sessionLoggedUser", JSON.stringify(user));
       }
     })
     navigate("/");
@@ -43,7 +44,7 @@ const Login = ({ setToken, setLoggedUser, users }) => {
 
 
   return (
-    <div className="login">
+    <div className="loginPage">
       <h2>Please Login</h2>
 
       <form onSubmit={handleSubmit}>

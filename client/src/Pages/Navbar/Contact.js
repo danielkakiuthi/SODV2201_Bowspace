@@ -6,8 +6,8 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <h1 className="contact">Help From Admin</h1>
+    <div className="contactPage">
+      <h1>Help From Admin</h1>
       <ContactForm onSubmit={onSubmit} />
     </div>
   );

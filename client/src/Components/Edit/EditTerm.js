@@ -30,7 +30,7 @@ const EditTerm = ({ term }) => {
 
 
   return (
-    <div className="edit-term">
+    <div className="addOrEditPage">
       <h2>Edit Term Page</h2>
       <form onSubmit={handleSubmit}>
         <h3>Term Id: {term.id}</h3>

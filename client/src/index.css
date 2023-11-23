@@ -2,77 +2,177 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
-   ------------------------------------------------ VIEW MY COURSES PAGE --------------------------------------------------------------
+   ----------------------------------------------------- HEADER COMPONENT -------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
-
-/* Styles for the View My Courses Page */
-.vmcbody {
-  max-width: 900px;
-  margin-left: auto;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles for unordered lists */
-ul {
-  list-style: none;
-  margin: 0;
+.headerComponent {
   padding: 0;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #f2f2f2;
+  background-color: darkblue;
+}
+  
+.headerComponent > h1 {
+  display: inline;
+  color: #f2f2f2;
+  font-size: 4em;
+  position: absolute;
+  top: 3%;
+  left: 12%;
+  padding-left: 25px;
+  width: 50%;
 }
 
-/* Styles for list items */
-ul li {
-  font-weight: bold;
-  margin-bottom: 10px;
+.headerComponent .navbar {
+  color: white;
+  display: inline;
+  position: relative;
+  padding-left: 8%;
+  margin: 0 20px;
+  text-decoration: none;
+  background-color: darkred;
+  margin-top: 5%;
+  width: 65%;
+}
+  
+.headerComponent .menu-user {
+  width: 20%;
+  display: flex; /* Adicionado flex para alinhar os links lado a lado */
+  position: absolute;
+  top: 0px;
+  right: 5vw;
+  color: white;
+}
+  
+.headerComponent .menu-user a {
+  margin: 10px;
+  padding-right: 50px;
+  color: white;
 }
 
-/* Styles for tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+.headerComponent .menu-user a:hover {
+  color: darkred;
 }
 
-/* Styles for table headers */
-thead {
-  background-color: #4285f4;
-  color: #fff;
+.headerComponent .navbar a{
+  margin: 10px;
+  padding-right: 55px;
+  color: white;
 }
 
-/* Styles for table header cells */
-th {
-  font-size: 18px;
-  padding: 16px;
-  text-align: center;
+.headerComponent .navbar a:hover{
+  color: darkblue;
 }
 
-/* Styles for even table rows */
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.headerComponent > img {
+  width: 10%;
+  text-align: left;
+  display: inline;
+  position: relative;
+  padding-top: 2vw;
+  padding-left: 2vw;
+  padding-bottom: 1vw;
+}
+  
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   --------------------------------------------------- NAVBAR COMPONENT ---------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.navbar {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  background-color: #333; /* Cor de fundo da barra de navegação */
+  color: #fff; /* Cor do texto */
+  width: 100%; /* A largura ocupará 100% da largura da janela do navegador */
 }
 
-/* Styles for table data cells */
-td {
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
+.navbar > div {
+  display: flex;
+  align-items: left;
+  justify-content: left;
 }
+
+.navbar > div > a {
+  text-decoration: none; /* Remova a decoração do link (sublinhado) */
+  color: #fff; /* Cor do texto dos links */
+  margin: 0 10px; /* Espaçamento horizontal entre os links */
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
-   -------------------------------------------------------- CONTACT PAGE --------------------------------------------------------------
+   -------------------------------------------------------- FOOTER COMPONENT ----------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
-
-/* Styles for the Contact Page */
-.contact {
-  text-align: center;
-  font-size: 34px;
+  .footerComponent {
+  margin-top: 90px;
 }
 
-/* Styles for form elements */
-form {
+.footerComponent >div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.footerComponent > div > a:hover {
+  text-decoration: none;
+  color: darkblue;
+}
+
+.footerComponent > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   --------------------------------------------------------- LIST COMPONENT -----------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.listPreview > div {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+
+.listPreview > div:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.listPreview > div > h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 12px;
+}
+
+.listPreview > div a {
+  text-decoration: none;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ----------------------------------------------------- CONFIGURED ROUTES ------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.configuredRoutes {
+  max-width: 75%;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ---------------------------------------------------------- LOGIN PAGE --------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+.loginPage form {
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -84,8 +184,7 @@ form {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for input and textarea fields */
-input, textarea {
+.loginPage input, textarea {
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
@@ -93,8 +192,7 @@ input, textarea {
   font-size: 16px;
 }
 
-/* Styles for buttons */
-button {
+.loginPage button {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #4285f4;
@@ -105,207 +203,102 @@ button {
   cursor: pointer;
 }
 
-/* Hover effect for buttons */
-button:hover {
+.loginPage button:hover {
   background-color: #3579d8;
 }
 
-/* Active state for buttons */
-button:active {
+.loginPage button:active {
   background-color: #2a66c7;
 }
 
-/* Base styles */
-* {
-  margin: 0;
-  font-family: "Quicksand";
-  color: #333;
-}
-
-/* Styles for h2 elements */
-h2 {
+.loginPage h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 10px;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------------------
-   -------------------------------------------------------------- HEADER --------------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-.header {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-  height: auto;
-  border-bottom: 1px solid #f2f2f2;
-  background-color: darkblue;
+.loginPage > form > a {
+  padding-top: 25px;
+  color:  green;
+  font-weight: bold;
 }
 
-.header h1{
-  font-size: 60px;
-}
-
-.bowspace {
-  display: inline;
-  color: #f2f2f2;
-  font-size: 2em;
-  position: absolute;
-  top: 3%;
-  left: 12%;
-  padding-left: 25px;
-  width: 50%;
-}
-
-.header .navbar {
-  color: white;
-  display: inline;
-  position: relative;
-  padding-left: 8%;
-  margin: 0 20px;
-  text-decoration: none;
-  background-color: darkred;
-  margin-top: 5%;
-  width: 65%;
-}
-
-.header .menu-user{
-  width: 20%;
-  display: flex; /* Adicionado flex para alinhar os links lado a lado */
-  position: absolute;
-  top: 0px;
-  right: 5vw;
-  color: white;
-}
-
-.header .menu-user a{
-  margin: 10px;
-  padding-right: 50px;
-  color: white;
-}
-
-/* Hover effect for menu user */
-.header .menu-user a:hover{
-  color: darkred;
-}
-
-.navbar {
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  background-color: #333; /* Cor de fundo da barra de navegação */
-  color: #fff; /* Cor do texto */
-  width: 100%; /* A largura ocupará 100% da largura da janela do navegador */
-}
-
-.navbarlinks {
-  display: flex;
-  align-items: left;
-  justify-content: left;
-}
-
-.navbarlinks a {
-  text-decoration: none; /* Remova a decoração do link (sublinhado) */
-  color: #fff; /* Cor do texto dos links */
-  margin: 0 10px; /* Espaçamento horizontal entre os links */
-}
-
-
-.header .navbar a{
-  margin: 10px;
-  padding-right: 55px;
-  color: white;
-}
-
-.header .navbar a:hover{
-  color: darkblue;
-}
-
-.header-image {
-  width: 10%;
-  text-align: left;
-  display: inline;
-  position: relative;
-  padding-top: 2vw;
-  padding-left: 2vw;
-}
-
-.links {
-  height: auto;
-  font-size: large;
-}
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
-   -------------------------------------------------------------- FOOTER --------------------------------------------------------------
+   -------------------------------------------------------- CONTACT PAGE --------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
-.footer {
-  margin-top: 90px;
-}
-
-/* Styles for footer links */
-.footerlinks {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  height: auto;
+.contactPage {
   text-align: center;
+  font-size: 34px;
 }
 
-/* Hover effect for footer links */
-.footerlinks a:hover {
-  text-decoration: none;
-  color: darkblue;
-}
-
-/* Styles for footer paragraphs */
-.pfooter {
+.contactPage form {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.contactPage input, textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contactPage button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contactPage button:hover {
+  background-color: #3579d8;
+}
+
+.contactPage button:active {
+  background-color: #2a66c7;
+}
+
+.contactPage h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
-   ------------------------------------------------------------- CONTENT --------------------------------------------------------------
+   --------------------------------------------------------- ADD OR EDIT PAGES ---------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
-.content {
-  max-width: 75%;
-  margin: 20px auto;
-  padding: 10px;
-}
-
-/* Remove underlines from links */
-a {
-  text-decoration: none;
-}
-
-/* Hover effect for links */
-a:hover {
-  color: #3579d8;
-}
-
-/* Add User Page */
-.add-user {
-  max-width: 100%;
+.addOrEditPage {
+  max-width: 40%;
   margin: auto;
   text-align: center;
 }
 
-/* Styles for labels in the Add User page */
-.add-user label {
+.addOrEditPage label {
   text-align: left;
   display: block;
 }
 
-/* Styles for h2 elements in the Add User page */
-.add-user h2 {
+.addOrEditPage h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 20px;
 }
 
-/* Styles for input, textarea, and select elements in the Add User page */
-.add-user input, .add-user textarea, .add-user select {
+.addOrEditPage input, .addOrEditPage textarea, .addOrEditPage select {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -314,8 +307,7 @@ a:hover {
   display: block;
 }
 
-/* Styles for buttons in the Add User page */
-.add-user button {
+.addOrEditPage button {
   background: #f1356d;
   color: #fff;
   border: 0;
@@ -324,66 +316,97 @@ a:hover {
   cursor: pointer;
 }
 
-/* Preview Components */
-.preview {
-  padding: 10px 16px;
-  margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
-}
-
-/* Hover effect for preview components */
-.preview:hover {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles for h2 elements in preview components */
-.preview h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 12px;
-}
-
-/* Remove underlines from links in preview components */
-.preview a {
-  text-decoration: none;
+.addOrEditPage button:hover {
+  background-color: darkred;
 }
 
 
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   ------------------------------------------------ VIEW MY COURSES PAGE --------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.viewMyCoursesPage {
+  max-width: 900px;
+  margin-left: auto;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.viewMyCoursesPage ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-/* Delete Buttons */
+.viewMyCoursesPage ul li {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+  
+.viewMyCoursesPage table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.viewMyCoursesPage thead {
+  background-color: #4285f4;
+  color: #fff;
+}
+  
+.viewMyCoursesPage th {
+  font-size: 18px;
+  padding: 16px;
+  text-align: center;
+}
+
+.viewMyCoursesPage tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.viewMyCoursesPage td {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+  -------------------------------------------------------------- BUTTONS --------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------------------------------ */
 .delete-button {
   background-color: red;
 }
 
-/* Hover effect for delete buttons */
 .delete-button:hover {
   background-color: darkred;
 }
 
+
 /* ------------------------------------------------------------------------------------------------------------------------------------
-   ---------------------------------------------------------- LOGIN PAGE --------------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ---------------------------------------------------------- GLOBAL ELEMENTS ----------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------------------------------ */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
 }
 
+h1 {
+  font-size: xx-large;
+}
 
-/* ------------------------------------------------------------------------------------------------------------------------------------
-   --------------------------------------- Media Queries for Responsive Design --------------------------------------------------------
-   ------------------------------------------------------------------------------------------------------------------------------------ */
-@media (max-width: 768px) {
-  /* Define styles for screens with a maximum width of 768px here */
-  .header .navbar {
-    width: 100%;
-  }
+p {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
 
-  .header .navbarlinks {
-    width: 100%;
-  }
+a {
+  text-decoration: none;  /* Remove underlines from links */
+}
 
-  .header .menu-user {
-    display: none; /* Hide the menu on smaller screens */
-  }
+a:hover {
+  color: #3579d8;
 }

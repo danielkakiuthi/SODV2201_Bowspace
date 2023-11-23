@@ -1,12 +1,12 @@
-import ProgramsList from '../Admin/Lists/ListPrograms';
+import ListPrograms from '../Admin/Lists/ListPrograms';
 
-const ProgramsInformation = ({ programs }) => {
+const ProgramsInformation = ({ programs, loggedUser }) => {
 
   return (
     <div className="programs-information">
       <h2>Programs Information Page</h2>
 
-      { programs && <ProgramsList programs={programs} /> }
+      { programs && <ListPrograms programs={programs} loggedUser={loggedUser} /> }
 
     </div>
   );

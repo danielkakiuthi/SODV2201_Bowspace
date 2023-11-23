@@ -82,7 +82,7 @@ const EditCourse = ({ course, loggedUser }) => {
 
 
   return (
-    <div className="edit-course">
+    <div className="addOrEditPage">
       <h1>Edit Course Page</h1>
       <form onSubmit={handleUpdate}>
         <h3>Course Id: {course.id}</h3>
@@ -138,7 +138,6 @@ const EditCourse = ({ course, loggedUser }) => {
         />
         { !isPending && <button>Update Course</button> }
         { isPending && <button disabled>Loading Course...</button> }
-        <button onClick={handleRegister} className='register-button'>Register</button>
         <button onClick={handleDelete} className='delete-button'>Delete Course</button>
       </form>
     </div>

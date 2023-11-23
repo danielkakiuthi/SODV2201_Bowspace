@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="about">
+    <div id="about">
       <h2>About Bow Course Registration Fullstack Web Application</h2>
       <p>
         Welcome to the Bowspace Registration Fullstack Web Application! This innovative project has been developed as part of the SODV2201 Web Programming Course. Our goal is to provide a seamless and user-friendly experience for students looking to register for various programs in the Software Development Department at Bowspace.

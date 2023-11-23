@@ -5,7 +5,7 @@ const ViewMyCourses = ({ loggedUser, programs, terms, courses }) => {
   const myCourses = courses.filter((course) => (loggedUser.currentIdCourses.some(v => (v===course.id))));
 
   return (
-    <div className='vmcbody'>
+    <div className='viewMyCoursesPage'>
       
       <h1>My Courses</h1>
       <table>

@@ -6,7 +6,7 @@ const AdminLandingPage = ({users, programs, terms, courses}) => {
   const navigate = useNavigate();
 
   return (
-    <div className="adminLandingPage">
+    <div className="landingPage">
       <h1>Admin Landing Page</h1>
 
         <table>

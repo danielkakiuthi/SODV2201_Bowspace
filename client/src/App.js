@@ -1,27 +1,79 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import useToken from './Hooks/useToken'
 import useFetch from './Hooks/useFetch';
 import LoggedOutRoutes from './Components/Routes/LoggedOutRoutes';
 import AdminLoggedInRoutes from './Components/Routes/AdminLoggedInRoutes';
 import StudentLoggedInRoutes from './Components/Routes/StudentLoggedInRoutes';
+import ListUsers from './Pages/Admin/Lists/ListUsers';
+
+
 
 
 function App() {
-
-  const { token, setToken } = useToken("");
-  const [loggedUser, setLoggedUser] = useState(null);
+  
+const { token, setToken } = useToken("");
+const [loggedUser, setLoggedUser] = useState(() => {
+  const sessionLoggedUser = window.sessionStorage.getItem("sessionLoggedUser");
+  return JSON.parse(sessionLoggedUser) || null; 
+})
 
   const urlListUsers = 'http://localhost:8000/listUsers';
   const urlListPrograms = 'http://localhost:8000/listPrograms';
   const urlListTerms = 'http://localhost:8000/listTerms';
   const urlListCourses = 'http://localhost:8000/listCourses';
 
-  const {data: users} = useFetch(urlListUsers);
-  const {data: programs} = useFetch(urlListPrograms);
-  const {data: terms} = useFetch(urlListTerms);
-  const {data: courses} = useFetch(urlListCourses);
-  
+  var users = useFetch(urlListUsers);
+  var programs = useFetch(urlListPrograms);
+  var terms = useFetch(urlListTerms);
+  var courses = useFetch(urlListCourses);
 
+    if(users) {
+      window.sessionStorage.setItem("sessionUsers", JSON.stringify(users));
+      console.log('Executed users IF');
+    }
+    else {
+      const sessionUsers = window.sessionStorage.getItem("sessionUsers");
+      users = JSON.parse(sessionUsers); 
+      console.log('Executed users ELSE');
+    }
+  
+    if(programs) {
+      window.sessionStorage.setItem("sessionPrograms", JSON.stringify(programs));
+    }
+    else {
+      const sessionPrograms = window.sessionStorage.getItem("sessionPrograms");
+      programs = JSON.parse(sessionPrograms);
+    }
+  
+    if(terms) {
+      window.sessionStorage.setItem("sessionTerms", JSON.stringify(terms));
+    }
+    else {
+      const sessionTerms = window.sessionStorage.getItem("sessionTerms");
+      terms = JSON.parse(sessionTerms); 
+    }
+  
+    if(courses) {
+      window.sessionStorage.setItem("sessionCourses", JSON.stringify(courses));
+    }
+    else {
+      const sessionCourses = window.sessionStorage.getItem("sessionCourses");
+      courses = JSON.parse(sessionCourses); 
+    }
+  
+  console.log(`token: ${token}`);
+  console.log(`loggedUser: ${loggedUser}`);
+  console.log(`Users from App: ${users}`)
+  console.log(`Programs from App: ${programs}`)
+  console.log(`Terms from App: ${terms}`)
+  console.log(`Courses from App: ${courses}`)
+
+  if(loggedUser!==null) {
+    console.log(`loggedUserEmail: ${loggedUser.emailUser}`);
+    console.log(`loggedUserCurrentIdProgram: ${loggedUser.currentIdProgram}`);
+  }
+
+  
   return (
     <>
       { !token && <LoggedOutRoutes
