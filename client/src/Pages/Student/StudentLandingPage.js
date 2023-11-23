@@ -3,12 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const StudentLandingPage = ({loggedUser, users, programs, terms, courses}) => {
   
-  if(loggedUser!==null) {
-    console.log(`loggedUserEmail from studentLandingPage: ${loggedUser.emailUser}`);
-    console.log(`loggedUserCurrentIdProgram from studentLandingPage: ${loggedUser.currentIdProgram}`);
-  }
-  console.log(`programs from studentLandingPage: ${programs}`);
-
   const myPrograms = programs.filter((program) => (program.id === loggedUser.currentIdProgram));
   const myTerms = terms.filter((term) => (term.id === loggedUser.currentIdTerm));
   const navigate = useNavigate();

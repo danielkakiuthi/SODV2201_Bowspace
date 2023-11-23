@@ -27,7 +27,7 @@ const Login = ({ setToken, setLoggedUser, users }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(users);
+    //console.log(users);
     users.map(async (user) => {
       if(user.emailUser===email && user.passwordUser===password) {
         token = await loginUser({

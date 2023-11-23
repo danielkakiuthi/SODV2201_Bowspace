@@ -29,12 +29,10 @@ const [loggedUser, setLoggedUser] = useState(() => {
 
     if(users) {
       window.sessionStorage.setItem("sessionUsers", JSON.stringify(users));
-      console.log('Executed users IF');
     }
     else {
       const sessionUsers = window.sessionStorage.getItem("sessionUsers");
       users = JSON.parse(sessionUsers); 
-      console.log('Executed users ELSE');
     }
   
     if(programs) {
@@ -60,18 +58,6 @@ const [loggedUser, setLoggedUser] = useState(() => {
       const sessionCourses = window.sessionStorage.getItem("sessionCourses");
       courses = JSON.parse(sessionCourses); 
     }
-  
-  console.log(`token: ${token}`);
-  console.log(`loggedUser: ${loggedUser}`);
-  console.log(`Users from App: ${users}`)
-  console.log(`Programs from App: ${programs}`)
-  console.log(`Terms from App: ${terms}`)
-  console.log(`Courses from App: ${courses}`)
-
-  if(loggedUser!==null) {
-    console.log(`loggedUserEmail: ${loggedUser.emailUser}`);
-    console.log(`loggedUserCurrentIdProgram: ${loggedUser.currentIdProgram}`);
-  }
 
   
   return (
