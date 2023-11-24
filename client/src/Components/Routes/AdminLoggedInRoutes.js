@@ -49,7 +49,7 @@ const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, progr
             <Route path='/users/:id' element={ <DetailsUser /> } />
             <Route path='/programs/:id' element={ <DetailsProgram /> } />
             <Route path='/terms/:id' element={ <DetailsTerm /> } />
-            <Route path='/courses/:id' element={ <DetailsCourse loggedUser={loggedUser} /> } />
+            <Route path='/courses/:id' element={ <DetailsCourse loggedUser={loggedUser} setLoggedUser={setLoggedUser} /> } />
 
             {/* List Routes */}
             <Route path='/listUsers' element={ <ListUsers users={users} /> } />

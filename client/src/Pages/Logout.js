@@ -9,6 +9,7 @@ const Logout = ({ setToken, setLoggedUser }) => {
   useEffect(() => {
     setLoggedUser(null);
     setToken("");
+    window.sessionStorage.clear();
     navigate("/login");
 
   })

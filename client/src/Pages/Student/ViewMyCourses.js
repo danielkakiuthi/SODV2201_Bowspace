@@ -1,7 +1,12 @@
+import useFetch from "../../Hooks/useFetch";
+
 const ViewMyCourses = ({ loggedUser, programs, terms, courses }) => {
 
   const myPrograms = programs.filter((program) => (program.id === loggedUser.currentIdProgram));
   const myTerms = terms.filter((term) => (term.id === loggedUser.currentIdTerm));
+
+  console.log(`courses: ${courses}`);
+  console.log(`loggedUser.currentIdCourses: ${loggedUser.currentIdCourses}`);
   const myCourses = courses.filter((course) => (loggedUser.currentIdCourses.some(v => (v===course.id))));
 
   return (

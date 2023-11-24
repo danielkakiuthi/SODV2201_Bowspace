@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const loginUser = async (credentials) => {
   
-  const url = `http://localhost:8080/login`;
+  const url = `http://localhost:8080/getToken`;
   
   return fetch(url, {
     method: 'POST',

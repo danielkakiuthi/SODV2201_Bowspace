@@ -11,6 +11,15 @@ import RegisterStudentForTerm from '../../Pages/Student/RegisterStudentForTerm';
 import RegisterStudentForCourses from '../../Pages/Student/RegisterStudentForCourses';
 import ViewMyCourses from '../../Pages/Student/ViewMyCourses';
 import Error from '../../Pages/Error';
+import DetailsCourse from '../../Pages/Admin/Details/DetailsCourse';
+import DetailsProgram from '../../Pages/Admin/Details/DetailsProgram';
+import DetailsTerm from '../../Pages/Admin/Details/DetailsTerm';
+import DetailsUser from '../../Pages/Admin/Details/DetailsUser';
+import ListCourses from '../../Pages/Admin/Lists/ListCourses';
+import ListPrograms from '../../Pages/Admin/Lists/ListPrograms';
+import ListTerms from '../../Pages/Admin/Lists/ListTerms';
+import ListUsers from '../../Pages/Admin/Lists/ListUsers';
+
 
 const StudentLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs, terms, courses }) => {
   return (
@@ -30,6 +39,18 @@ const StudentLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, pro
             <Route path='/logout' element={ <Logout setToken={setToken} setLoggedUser={setLoggedUser} /> } />
             <Route path='/login' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />
             
+            {/* Details Routes */}
+            <Route path='/users/:id' element={ <DetailsUser /> } />
+            <Route path='/programs/:id' element={ <DetailsProgram /> } />
+            <Route path='/terms/:id' element={ <DetailsTerm /> } />
+            <Route path='/courses/:id' element={ <DetailsCourse loggedUser={loggedUser} setLoggedUser={setLoggedUser} /> } />
+
+            {/* List Routes */}
+            <Route path='/listUsers' element={ <ListUsers users={users} /> } />
+            <Route path='/listPrograms' element={ <ListPrograms programs={programs} loggedUser={loggedUser} /> } />
+            <Route path='/listTerms' element={ <ListTerms terms={terms} /> } />
+            <Route path='/listCourses' element={ <ListCourses courses={courses} /> } />
+
             {/* Custom Routes */}
             <Route path='/registerStudentForTerm' element={ <RegisterStudentForTerm loggedUser={loggedUser} terms={terms} /> } />
             <Route path='/registerStudentForCourses' element={ <RegisterStudentForCourses loggedUser={loggedUser} courses={courses} /> } />

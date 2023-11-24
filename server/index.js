@@ -7,9 +7,9 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(cors());
 
-app.use('/login', (req, res) => {
+app.use('/getToken', (req, res) => {
   res.send({
-    token: 'test123'
+    token: 'myPersonalTokenValidated'
   });
 });
 

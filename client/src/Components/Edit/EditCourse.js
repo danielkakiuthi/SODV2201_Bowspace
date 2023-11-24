@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-const EditCourse = ({ course, loggedUser }) => {
+
+const EditCourse = ({ course, users, loggedUser, setLoggedUser }) => {
 
   const [isPending, setIsPending] = useState(false);
   const [idTerm, setIdTerm] = useState(course.idTerm);
@@ -43,8 +44,33 @@ const EditCourse = ({ course, loggedUser }) => {
 
   const handleRegister = () => {
     setIsPending(true);
+    const myFinishedIdCourses = loggedUser.finishedIdCourses;
     const myCurrentIdCourses = loggedUser.currentIdCourses;
+
+    console.log(`myFinishedIdCourses: ${myFinishedIdCourses}`);
+    console.log(`myCurrentIdCourses: ${myCurrentIdCourses}`);
+    console.log(`course.id: ${course.id}`);
+
+    //check if user alreadyfinished this course
+    if(myFinishedIdCourses.includes(course.id)) {
+      console.log('You have already Finished this Course!');
+      alert('You have already Finished this Course!');
+      setIsPending(false);
+      navigate("/viewMyCourses");
+      return;
+    }
+
+    //check if user is already registered to this course
+    if(myCurrentIdCourses.includes(course.id)) {
+      console.log('You are already currently registered for this Course!');
+      alert('You are already currently registered for this Course!');
+      setIsPending(false);
+      navigate("/viewMyCourses");
+      return;
+    }
+
     const newCurrentIdCourses = [...myCurrentIdCourses, course.id]
+    
     const urlRegister = `http://localhost:8000/listUsers/${ loggedUser.id }`;
     const data = {
       emailUser: loggedUser.emailUser,
@@ -64,9 +90,16 @@ const EditCourse = ({ course, loggedUser }) => {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
-      console.log('User Courses Updated!');
+      console.log(`users: ${users}`);
+      const updatedLoggedUser = users.filter((user) => (user.id === loggedUser.id))[0];
+      
+      setLoggedUser(updatedLoggedUser);
+      console.log(`updatedLoggedUser: ${updatedLoggedUser}`);
+      window.sessionStorage.setItem("sessionLoggedUser", JSON.stringify(updatedLoggedUser));
+      console.log('Registered for new Course!');
+      alert('Registered for new Course!');
       setIsPending(false);
-      navigate("/");
+      navigate("/viewMyCourses");
     })
   }
 
@@ -138,8 +171,9 @@ const EditCourse = ({ course, loggedUser }) => {
         />
         { !isPending && <button>Update Course</button> }
         { isPending && <button disabled>Loading Course...</button> }
-        <button onClick={handleDelete} className='delete-button'>Delete Course</button>
       </form>
+        <button onClick={handleRegister} className='register-button'>Register For Course</button>
+        <button onClick={handleDelete} className='delete-button'>Delete Course</button>
     </div>
   );
 }

@@ -10,6 +10,9 @@ import Footer from '../Footer';
 import Error from '../../Pages/Error';
 
 const AdminLoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs }) => {
+
+  console.log(`loggedUser: ${loggedUser}`);
+
   return (
     <>
         <BrowserRouter>
