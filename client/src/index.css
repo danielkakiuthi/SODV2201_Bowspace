@@ -23,19 +23,10 @@
   left: 12%;
   padding-left: 25px;
   width: 50%;
+  margin-bottom: 20px;
 }
 
-.headerComponent .navbar {
-  color: white;
-  display: inline;
-  position: relative;
-  padding-left: 8%;
-  margin: 0 20px;
-  text-decoration: none;
-  background-color: darkred;
-  margin-top: 5%;
-  width: 65%;
-}
+
   
 .headerComponent .menu-user {
   width: 20%;
@@ -54,17 +45,9 @@
 
 .headerComponent .menu-user a:hover {
   color: darkred;
+  cursor: pointer;
 }
 
-.headerComponent .navbar a{
-  margin: 10px;
-  padding-right: 55px;
-  color: white;
-}
-
-.headerComponent .navbar a:hover{
-  color: darkblue;
-}
 
 .headerComponent > img {
   width: 10%;
@@ -80,12 +63,17 @@
    --------------------------------------------------- NAVBAR COMPONENT ---------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
 .navbar {
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  background-color: #333; /* Cor de fundo da barra de navegação */
-  color: #fff; /* Cor do texto */
-  width: 100%; /* A largura ocupará 100% da largura da janela do navegador */
+  color: white;
+  display: inline;
+  position: relative;
+  padding: 8px 20px 8px 20px;
+  margin: 0 20px;
+  text-decoration: none;
+  background-color: darkred;
+  margin-top: 7%;
+  width: 71%;
+  bottom: 0px;
+  border-radius: 4px;
 }
 
 .navbar > div {
@@ -94,18 +82,29 @@
   justify-content: left;
 }
 
-.navbar > div > a {
-  text-decoration: none; /* Remova a decoração do link (sublinhado) */
-  color: #fff; /* Cor do texto dos links */
-  margin: 0 10px; /* Espaçamento horizontal entre os links */
+.navbar a{
+  margin: 0 10px;
+  padding-right: 55px;
+  color: white;
 }
+
+.navbar a:hover{
+  color: darkblue;
+  cursor: pointer;
+}
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
    -------------------------------------------------------- FOOTER COMPONENT ----------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
-  .footerComponent {
-  margin-top: 90px;
+.footerComponent {
+  position: relative;
+  margin-top: 0px;
+  bottom: 0;
+  width: 100%;
+  padding-top: 20px;
+  background-color: #dddddd;
 }
 
 .footerComponent >div {
@@ -118,8 +117,8 @@
 }
 
 .footerComponent > div > a:hover {
-  text-decoration: none;
   color: darkblue;
+  cursor: pointer;
 }
 
 .footerComponent > p {
@@ -132,25 +131,50 @@
 /* ------------------------------------------------------------------------------------------------------------------------------------
    --------------------------------------------------------- LIST COMPONENT -----------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
-.listPreview > div {
-  padding: 10px 16px;
-  margin: 20px 0;
+.listPreview  {
+  margin-top: 20px;
+  padding: 0px;
   border-bottom: 1px solid #fafafa;
+  border-left: 8px solid rgb(67, 30, 97);
+  border-radius: 10px;
+}
+
+.listPreview h1 {
+  padding: 5px 10px 10px 10px;
+  background-color: rgb(138, 69, 196);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.listPreview > div {
+  padding: 0px;
+  margin: 20px;
+  border-bottom: 1px solid #fafafa;
+  border-left: 8px solid rgb(24, 167, 255);
+  border-radius: 10px;
 }
 
 .listPreview > div:hover {
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.listPreview > div > h2 {
+.listPreview > div > a > h2 {
   font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
+  background-color: rgb(247, 117, 71);
+  padding: 5px 0px 5px 10px;
+  border-radius: 4px;
 }
 
 .listPreview > div a {
   text-decoration: none;
 }
+
+.listPreview p {
+  padding: 10px 20px 15px 20px;
+}
+
 
 
 /* ------------------------------------------------------------------------------------------------------------------------------------
@@ -158,8 +182,11 @@
    ------------------------------------------------------------------------------------------------------------------------------------ */
 .configuredRoutes {
   max-width: 75%;
-  margin: 20px auto;
+  margin: 0px auto;
   padding: 10px;
+  background-color: #fdfdfd;
+  padding-top: 50px;
+  padding-bottom: 90px;
 }
 
 
@@ -180,20 +207,20 @@
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .loginPage input, textarea {
-  margin: 10px 0;
-  padding: 10px;
+  margin: 0px;
+  padding: 10px 20px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
 }
 
 .loginPage button {
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 10px 20px;
   background-color: #4285f4;
   color: #fff;
@@ -205,6 +232,7 @@
 
 .loginPage button:hover {
   background-color: #3579d8;
+  cursor: pointer;
 }
 
 .loginPage button:active {
@@ -218,7 +246,7 @@
 }
 
 .loginPage > form > a {
-  padding-top: 25px;
+  padding-top: 30px;
   color:  green;
   font-weight: bold;
 }
@@ -258,17 +286,20 @@
   background-color: #4285f4;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
 }
 
 .contactPage button:hover {
   background-color: #3579d8;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .contactPage button:active {
   background-color: #2a66c7;
+  border-radius: 10px;
 }
 
 .contactPage h2 {
@@ -282,9 +313,21 @@
    --------------------------------------------------------- ADD OR EDIT PAGES ---------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
 .addOrEditPage {
-  max-width: 40%;
+  max-width: 50%;
   margin: auto;
   text-align: center;
+}
+
+.addOrEditPage form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .addOrEditPage label {
@@ -318,6 +361,66 @@
 
 .addOrEditPage button:hover {
   background-color: darkred;
+  cursor: pointer;
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------------
+   --------------------------------------------------------- LANDING PAGES ------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------------------ */
+.landingPage  {
+  margin-top: 20px;
+  padding: 0px;
+  border-bottom: 1px solid #fafafa;
+  border-left: 8px solid rgb(67, 30, 97);
+  border-radius: 10px;
+}
+
+.landingPage h1 {
+  padding: 5px 10px 10px 10px;
+  background-color: rgb(151, 145, 155);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.landingPage h3 {
+  background-color: rgb(202, 184, 184);
+  padding: 10px;
+  border-bottom: #f1356d;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+
+
+.landingPage > div {
+  padding: 0px;
+  margin: 20px;
+  border-left: 8px solid rgb(67, 30, 97);
+  border-radius: 10px;
+}
+
+.landingPage table {
+  width: 50%;
+  padding: 10px;
+}
+
+.landingPage button {
+  padding: 20px;
+  border-radius: 20px;
+  width: 250px;
+  font-weight: bold;
+  font-size: medium;
+  background-color: rgb(240, 178, 55);
+}
+
+.landingPage button:hover {
+  background-color: darkorange;
+  cursor: pointer;
+}
+
+.landingPage ul {
+  padding: 0px 10px 15px 40px;
 }
 
 
@@ -325,7 +428,7 @@
    ------------------------------------------------ VIEW MY COURSES PAGE --------------------------------------------------------------
    ------------------------------------------------------------------------------------------------------------------------------------ */
 .viewMyCoursesPage {
-  max-width: 900px;
+  max-width: 95%;
   margin-left: auto;
   margin: 0 auto;
   padding: 20px;
@@ -382,6 +485,7 @@
 
 .delete-button:hover {
   background-color: darkred;
+  cursor: pointer;
 }
 
 
@@ -401,12 +505,23 @@ h1 {
 p {
   padding-top: 20px;
   padding-bottom: 30px;
+  padding-left: 7px;
+  padding-right: 7px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+ul {
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 a {
   text-decoration: none;  /* Remove underlines from links */
+  border-radius: 10px;
 }
 
 a:hover {
   color: #3579d8;
+  cursor: pointer;
 }

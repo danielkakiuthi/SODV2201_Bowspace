@@ -15,7 +15,7 @@ const ListPrograms = ({ programs, loggedUser }) => {
           </Link>
         </div>
       ))}
-      { loggedUser.isAdmin && <button onClick={() => navigate('/addProgram')}>Add Program</button> }
+      {/* { loggedUser.isAdmin && <button onClick={() => navigate('/addProgram')}>Add Program</button> } */}
     </div>
   );
 }

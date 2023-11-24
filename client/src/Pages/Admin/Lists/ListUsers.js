@@ -15,7 +15,7 @@ const ListUsers = ({ users }) => {
           </Link>
         </div>
       ))}
-      <button onClick={() => navigate('/addUser')}>Add User</button>
+      {/* <button onClick={() => navigate('/addUser')}>Add User</button> */}
     </div>
   );
 }

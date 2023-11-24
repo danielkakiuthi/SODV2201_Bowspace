@@ -15,7 +15,7 @@ const ListTerms = ({ terms }) => {
           </Link>
         </div>
       ))}
-      <button onClick={() => navigate('/addTerm')}>Add Term</button>
+      {/* <button onClick={() => navigate('/addTerm')}>Add Term</button> */}
     </div>
   );
 }

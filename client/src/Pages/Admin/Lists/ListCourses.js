@@ -15,7 +15,7 @@ const ListCourses = ({ courses }) => {
           </Link>
         </div>
       ))}
-      <button onClick={() => navigate('/addCourse')}>Add Course</button>
+      {/* <button onClick={() => navigate('/addCourse')}>Add Course</button> */}
     </div>
   );
 }
