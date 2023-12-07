@@ -9,7 +9,7 @@ function App() {
 
   const { token, setToken } = useToken("");
   const [loggedUser, setLoggedUser] = useState(() => {
-    const sessionLoggedUser = window.sessionStorage.getItem("sessionLoggedUser");
+    var sessionLoggedUser = window.sessionStorage.getItem("sessionLoggedUser");
     return JSON.parse(sessionLoggedUser) || null; 
   })
   
@@ -57,7 +57,7 @@ function App() {
   }
 
   console.log(`token: ${token}`);
-  console.log(`loggedUser: ${loggedUser}`);
+  console.log(`loggedUser: ${JSON.stringify(loggedUser, null, 2)}`);
   console.log(`users: ${users}`);
   console.log(`programs: ${programs}`);
   console.log(`terms: ${terms}`);

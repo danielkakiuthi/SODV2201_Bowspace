@@ -10,6 +10,7 @@ import StudentLandingPage from '../../Pages/Student/StudentLandingPage';
 import RegisterStudentForTerm from '../../Pages/Student/RegisterStudentForTerm';
 import RegisterStudentForCourses from '../../Pages/Student/RegisterStudentForCourses';
 import ViewMyCourses from '../../Pages/Student/ViewMyCourses';
+import ViewMyPastCourses from '../../Pages/Student/ViewMyPastCourses';
 import Error from '../../Pages/Error';
 import DetailsCourse from '../../Pages/Admin/Details/DetailsCourse';
 import DetailsProgram from '../../Pages/Admin/Details/DetailsProgram';
@@ -55,6 +56,7 @@ const StudentLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, pro
             <Route path='/registerStudentForTerm' element={ <RegisterStudentForTerm loggedUser={loggedUser} terms={terms} /> } />
             <Route path='/registerStudentForCourses' element={ <RegisterStudentForCourses loggedUser={loggedUser} courses={courses} /> } />
             <Route path='/viewMyCourses' element={ <ViewMyCourses loggedUser={loggedUser} programs={programs} terms={terms} courses={courses} /> } />
+            <Route path='/viewMyPastCourses' element={ <ViewMyPastCourses loggedUser={loggedUser} programs={programs} terms={terms} courses={courses} /> } />
             
             {/* Default Route */}
             <Route path='/*' element={ <Error /> } />

@@ -19,7 +19,7 @@ const StudentLandingPage = ({loggedUser, users, programs, terms, courses}) => {
         </div>
 
         <div>
-          <h3>Resources</h3>
+          <h3>Current Data</h3>
           <table>
             <tbody>
               <tr>
@@ -31,11 +31,23 @@ const StudentLandingPage = ({loggedUser, users, programs, terms, courses}) => {
         </div>
 
         <div>
+          <h3>Past Data</h3>
+          <table>
+            <tbody>
+              <tr>
+                <td><button onClick={() => navigate('/viewMyPastCourses')}>View My Past Courses</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <div>
           <h3>Registration</h3>
           <table>
             <tbody>
               <tr>
-                <td><button onClick={() => navigate('/registerStudentForTerm')}>Register for Term</button></td>
+                {/* <td><button onClick={() => navigate('/registerStudentForTerm')}>Register for Term</button></td> */}
                 <td><button onClick={() => navigate('/registerStudentForCourses')}>Register for Courses</button></td>
               </tr>
             </tbody>

@@ -70,7 +70,8 @@ const EditCourse = ({ course, users, loggedUser, setLoggedUser }) => {
     }
 
     const newCurrentIdCourses = [...myCurrentIdCourses, course.id]
-    
+    console.log(`newCurrentIdCourses: ${newCurrentIdCourses}`);
+
     const urlRegister = `http://localhost:8000/listUsers/${ loggedUser.id }`;
     const data = {
       emailUser: loggedUser.emailUser,
@@ -90,11 +91,9 @@ const EditCourse = ({ course, users, loggedUser, setLoggedUser }) => {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     }).then(() => {
-      console.log(`users: ${users}`);
-      const updatedLoggedUser = users.filter((user) => (user.id === loggedUser.id))[0];
-      
+      const updatedLoggedUser = data;
       setLoggedUser(updatedLoggedUser);
-      console.log(`updatedLoggedUser: ${updatedLoggedUser}`);
+      console.log(`updatedLoggedUser: ${JSON.stringify(updatedLoggedUser, null, 2)}`);
       window.sessionStorage.setItem("sessionLoggedUser", JSON.stringify(updatedLoggedUser));
       console.log('Registered for new Course!');
       alert('Registered for new Course!');
@@ -169,11 +168,11 @@ const EditCourse = ({ course, users, loggedUser, setLoggedUser }) => {
           onChange={(e) => setDescription(e.target.value)}
           rows="10"
         />
-        { !isPending && <button>Update Course</button> }
+        { !isPending && loggedUser.isAdmin && <button>Update Course</button> }
         { isPending && <button disabled>Loading Course...</button> }
       </form>
-        <button onClick={handleRegister} className='register-button'>Register For Course</button>
-        <button onClick={handleDelete} className='delete-button'>Delete Course</button>
+        { !loggedUser.isAdmin && <button onClick={handleRegister} className='register-button'>Register For Course</button> }
+        { loggedUser.isAdmin && <button onClick={handleDelete} className='delete-button'>Delete Course</button> }
     </div>
   );
 }
