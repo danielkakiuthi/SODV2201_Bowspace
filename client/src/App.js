@@ -17,11 +17,13 @@ function App() {
   const urlListPrograms = 'http://localhost:8000/listPrograms';
   const urlListTerms = 'http://localhost:8000/listTerms';
   const urlListCourses = 'http://localhost:8000/listCourses';
+  const urlListAdminContacts = 'http://localhost:8000/listAdminContacts';
 
   var { data:users } = useFetch(urlListUsers);
   var { data:programs } = useFetch(urlListPrograms);
   var { data:terms } = useFetch(urlListTerms);
   var { data:courses } = useFetch(urlListCourses);
+  var { data:adminContacts } = useFetch(urlListAdminContacts);
 
 
   if(users) {
@@ -56,12 +58,22 @@ function App() {
     courses = JSON.parse(sessionCourses); 
   }
 
+  if(adminContacts) {
+    window.sessionStorage.setItem("sessionAdminContacts", JSON.stringify(adminContacts));
+  }
+  else {
+    const sessionAdminContacts = window.sessionStorage.getItem("sessionAdminContacts");
+    adminContacts = JSON.parse(sessionAdminContacts); 
+  }
+
   console.log(`token: ${token}`);
   console.log(`loggedUser: ${JSON.stringify(loggedUser, null, 2)}`);
-  console.log(`users: ${users}`);
-  console.log(`programs: ${programs}`);
-  console.log(`terms: ${terms}`);
-  console.log(`courses: ${courses}`);
+  // console.log(`users: ${JSON.stringify(users, null, 2)}`);
+  // console.log(`programs: ${JSON.stringify(programs, null, 2)}`);
+  // console.log(`terms: ${JSON.stringify(terms, null, 2)}`);
+  // console.log(`courses: ${JSON.stringify(courses, null, 2)}`);
+  // console.log(`adminContacts: ${JSON.stringify(adminContacts, null, 2)}`);
+
   
   return (
     <>
@@ -71,6 +83,7 @@ function App() {
         setLoggedUser={setLoggedUser}
         users={users}
         programs={programs}
+        adminContacts={adminContacts}
       />}
 
       { token && loggedUser.isAdmin && <AdminLoggedInRoutes
@@ -81,6 +94,7 @@ function App() {
         programs={programs}
         terms={terms}
         courses={courses}
+        adminContacts={adminContacts}
       />}
 
       { token && !loggedUser.isAdmin && <StudentLoggedInRoutes
@@ -91,6 +105,7 @@ function App() {
         programs={programs}
         terms={terms}
         courses={courses}
+        adminContacts={adminContacts}
       />}
     </>
   );

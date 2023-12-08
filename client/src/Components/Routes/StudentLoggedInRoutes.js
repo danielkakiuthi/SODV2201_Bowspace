@@ -22,7 +22,7 @@ import ListTerms from '../../Pages/Admin/Lists/ListTerms';
 import ListUsers from '../../Pages/Admin/Lists/ListUsers';
 
 
-const StudentLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs, terms, courses }) => {
+const StudentLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs, terms, courses, adminContacts }) => {
   return (
     <div className="App">
       <BrowserRouter>
@@ -34,7 +34,7 @@ const StudentLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, pro
             <Route index path='/' element={ <StudentLandingPage loggedUser={loggedUser} users={users} programs={programs} terms={terms} courses={courses} /> } />
             <Route path='/about' element={ <About /> } />
             <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} loggedUser={loggedUser} /> } />
-            <Route path='/contact' element={ <Contact /> } />
+            <Route path='/contact' element={ <Contact adminContacts={adminContacts} /> } />
 
             {/* MenuUser Routes */}
             <Route path='/logout' element={ <Logout setToken={setToken} setLoggedUser={setLoggedUser} /> } />

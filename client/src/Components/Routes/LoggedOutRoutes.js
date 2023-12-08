@@ -9,7 +9,7 @@ import Contact from '../../Pages/Navbar/Contact';
 import Footer from '../Footer';
 import Error from '../../Pages/Error';
 
-const AdminLoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs }) => {
+const AdminLoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs, adminContacts }) => {
 
   console.log(`loggedUser: ${loggedUser}`);
 
@@ -24,7 +24,7 @@ const AdminLoggedOutRoutes = ({ setToken, loggedUser, setLoggedUser, users, prog
               <Route index path='/' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />
               <Route path='/about' element={ <About /> } />
               <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} loggedUser={{isAdmin:false}} /> } />
-              <Route path='/contact' element={ <Contact /> } />
+              <Route path='/contact' element={ <Contact adminContacts={adminContacts} /> } />
 
               {/* MenuUser Routes */}
               <Route path='/login' element={ <Login setToken={setToken} setLoggedUser={setLoggedUser} users={users} /> } />

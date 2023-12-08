@@ -15,13 +15,15 @@ import DetailsUser from '../../Pages/Admin/Details/DetailsUser';
 import DetailsProgram from '../../Pages/Admin/Details/DetailsProgram';
 import DetailsTerm from '../../Pages/Admin/Details/DetailsTerm';
 import DetailsCourse from '../../Pages/Admin/Details/DetailsCourse';
+import DetailsAdminContacts from '../../Pages/Admin/Details/DetailsAdminContacts';
 import ListUsers from '../../Pages/Admin/Lists/ListUsers';
 import ListPrograms from '../../Pages/Admin/Lists/ListPrograms';
 import ListTerms from '../../Pages/Admin/Lists/ListTerms';
 import ListCourses from '../../Pages/Admin/Lists/ListCourses';
+import ListAdminContacts from '../../Pages/Admin/Lists/ListAdminContacts';
 import Error from '../../Pages/Error';
 
-const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs, terms, courses }) => {
+const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, programs, terms, courses, adminContacts }) => {
   return (
     <div className="App">
       <BrowserRouter>
@@ -33,7 +35,7 @@ const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, progr
             <Route index path='/' element={ <AdminLandingPage users={users} programs={programs} terms={terms} courses={courses} /> } />
             <Route path='/about' element={ <About /> } />
             <Route path='/programsInformation' element={ <ProgramsInformation programs={programs} loggedUser={loggedUser} /> } />
-            <Route path='/contact' element={ <Contact /> } />
+            <Route path='/contact' element={ <Contact adminContacts={adminContacts} /> } />
 
             {/* MenuUser Routes */}
             <Route path='/logout' element={ <Logout setToken={setToken} setLoggedUser={setLoggedUser} /> } />
@@ -50,12 +52,14 @@ const AdminLoggedInRoutes = ({ setToken, loggedUser, setLoggedUser, users, progr
             <Route path='/programs/:id' element={ <DetailsProgram /> } />
             <Route path='/terms/:id' element={ <DetailsTerm /> } />
             <Route path='/courses/:id' element={ <DetailsCourse loggedUser={loggedUser} setLoggedUser={setLoggedUser} /> } />
+            <Route path='/adminContacts/:id' element={ <DetailsAdminContacts adminContacts={adminContacts} /> } />
 
             {/* List Routes */}
             <Route path='/listUsers' element={ <ListUsers users={users} /> } />
             <Route path='/listPrograms' element={ <ListPrograms programs={programs} loggedUser={loggedUser} /> } />
             <Route path='/listTerms' element={ <ListTerms terms={terms} /> } />
             <Route path='/listCourses' element={ <ListCourses courses={courses} /> } />
+            <Route path='/listAdminContacts' element={ <ListAdminContacts adminContacts={adminContacts} /> } />
             
             {/* Default Route */}
             <Route path='/*' element={ <Error /> } />

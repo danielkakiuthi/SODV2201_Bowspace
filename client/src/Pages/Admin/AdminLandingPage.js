@@ -58,6 +58,17 @@ const AdminLandingPage = ({users, programs, terms, courses}) => {
           </table>
         </div>
 
+        <div>
+          <h3>Manage Contacts To Admin</h3>
+          <table>
+            <tbody>
+              <tr>
+                <td><button onClick={() => navigate('/listAdminContacts')}>List Admin Contacts</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
     </div>
     
   );
